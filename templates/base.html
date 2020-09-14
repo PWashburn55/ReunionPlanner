@@ -3,27 +3,51 @@
 
 <head>
     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- from getbootstrap site to make page responsive for mobile first design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css type="text/css" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css type="text/css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css"/>
-    <script type="text/javascript" src="assets/js/script.js"></script>
 <title>Reunion Planner</title>
 </head>
 <body>
- <!-- navbar code from w3 schools & computerhope-->
- <div class = "container-fluid navbar">
-
- </div>  
-
+    {% block content %} 
+  <!-- navbar code from w3 schools & computerhope-->
+      <div class="topnav " id="myTopnav">
+         <a href="#myTopnav" class="active nav-links"></a>
+         <a href="people.html" class="nav-links">People</a>
+         <a href="schedule.html" class="nav-links">Schedule</a>
+         <a href="comments.html" class="nav-links">Comments</a>
+         <a href="expenses.html" class="nav-links">Expenses</a>
+         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+         <i class="fa fa-bars"></i>
+         </a>
+         <div class="container-fluid headline_div">
+            <h3 class="headline">Reunion Planner</h3>
+         </div>
+      </div>
+       {% endblock %}
+    <section>
+    <h4>Destination: Niagara Falls</h4>
+    <div class="container-fluid niagara-falls"> </div>
+    </section>
+    <section>
+    <h4>Map of Niagara Falls, Ontario, Canada</h4>
+    <div id="map"></div>
+    </section>
   <footer>
          <section class="container-fluid footer">
-            <div>
-            </div>
          </section>
       </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.collapsible').collapsible();
+        })
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEIUFrkeKezardlOyREcqlrc34xjj3i7M&callback=initMap"></script>
+      <script src="static/js/map.js"></script>
 </body>
 </html>
