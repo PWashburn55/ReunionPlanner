@@ -1,51 +1,278 @@
 {% extends 'base.html' %}
 {% block content %}
- {% endblock %}
-<!--code from codepen.io-->
+
+<!--code from codepen.io, task manager project & stack overflow-->
+<div class="container">
 <table>
-  <thead>
-    <tr>
-      <th></th>
+  <!--<thead>-->
+    <div class="col s12 m6 l1 collapsible-body">
+    {% for item in schedule %}
+      <tr>
       <th>
-        <span class="day">1</span>
+        <span class="day">July 3</span>
         <span class="long">Saturday</span>
-        <span class="short">Sa</span>
       </th>
+      </tr>
+      <tr>
+      <td class="morning"><span>Morning</span></td>
+      <td><span>
+        {{item.morning}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="afternoon"><span>Afternoon</span></td>
+      <td><span>
+        {{item.afternoon}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="dinner"><span>Dinner</span></td>
+      <td><span>
+        {{item.dinner}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="evening"><span>Evening</span></td>
+      <td><span>
+        {{item.evening}}
+      </span> </td>
+      </tr>
+      {% endfor %}
+      </div>
+        <div class="col s12 m6 l1 collapsible-body">
+    {% for item in schedule %}
+      <tr>
       <th>
-        <span class="day">2</span>
+        <span class="day">July 4</span>
         <span class="long">Sunday</span>
-        <span class="short">Su</span>
       </th>
+      </tr>
+      <tr>
+      <td class="morning"><span>Morning</span></td>
+      <td><span>
+        {{item.morning}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="afternoon"><span>Afternoon</span></td>
+      <td><span>
+        {{item.afternoon}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="dinner"><span>Dinner</span></td>
+      <td><span>
+        {{item.dinner}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="evening"><span>Evening</span></td>
+      <td><span>
+        {{item.evening}}
+      </span> </td>
+      </tr>
+      {% endfor %}
+      </div>
+      <div class="col s12 m6 l1 collapsible-body">
+    {% for item in schedule %}
+      <tr>
       <th>
-        <span class="day">3</span>
+        <span class="day">July 5</span>
         <span class="long">Monday</span>
-        <span class="short">Mo</span>
       </th>
+      </tr>
+      <tr>
+      <td class="morning"><span>Morning</span></td>
+      <td><span>
+        {{item.morning}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="afternoon"><span>Afternoon</span></td>
+      <td><span>
+        {{item.afternoon}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="dinner"><span>Dinner</span></td>
+      <td><span>
+        {{item.dinner}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="evening"><span>Evening</span></td>
+      <td><span>
+        {{item.evening}}
+      </span> </td>
+      </tr>
+      {% endfor %}
+      </div>
+      <div class="col s12 m6 l1 collapsible-body">
+    {% for item in schedule %}
+      <tr>
       <th>
-        <span class="day">4</span>
+        <span class="day">July 6</span>
         <span class="long">Tuesday</span>
-        <span class="short">Tu</span>
       </th>
+      </tr>
+      <tr>
+      <td class="morning"><span>Morning</span></td>
+      <td><span>
+        {{item.morning}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="afternoon"><span>Afternoon</span></td>
+      <td><span>
+        {{item.afternoon}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="dinner"><span>Dinner</span></td>
+      <td><span>
+        {{item.dinner}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="evening"><span>Evening</span></td>
+      <td><span>
+        {{item.evening}}
+      </span> </td>
+      </tr>
+      {% endfor %}
+      </div>
+      <div class="col s12 m6 l1 collapsible-body">
+    {% for item in schedule %}
+      <tr>
       <th>
-        <span class="day active">5</span>
+        <span class="day">July 7</span>
         <span class="long">Wednesday</span>
-        <span class="short">We</span>
       </th>
+      </tr>
+      <tr>
+      <td class="morning"><span>Morning</span></td>
+      <td><span>
+        {{item.morning}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="afternoon"><span>Afternoon</span></td>
+      <td><span>
+        {{item.afternoon}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="dinner"><span>Dinner</span></td>
+      <td><span>
+        {{item.dinner}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="evening"><span>Evening</span></td>
+      <td><span>
+        {{item.evening}}
+      </span> </td>
+      </tr>
+      {% endfor %}
+      </div>
+      <div class="col s12 m6 l1 collapsible-body">
+    {% for item in schedule %}
+      <tr>
       <th>
-        <span class="day">6</span>
+        <span class="day">July 8</span>
         <span class="long">Thursday</span>
-        <span class="short">Th</span>
+      </th>
+      </tr>
+      <tr>
+      <td class="morning"><span>Morning</span></td>
+      <td><span>
+        {{item.morning}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="afternoon"><span>Afternoon</span></td>
+      <td><span>
+        {{item.afternoon}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="dinner"><span>Dinner</span></td>
+      <td><span>
+        {{item.dinner}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="evening"><span>Evening</span></td>
+      <td><span>
+        {{item.evening}}
+      </span> </td>
+      </tr>
+      {% endfor %}
+      </div>
+      <div class="col s12 m6 l1 collapsible-body">
+    {% for item in schedule %}
+      <tr>
+      <th>
+        <span class="day">July 9</span>
+        <span class="long">Friday</span>
+      </th>
+      </tr>
+      <tr>
+      <td class="morning"><span>Morning</span></td>
+      <td><span>
+        {{item.morning}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="afternoon"><span>Afternoon</span></td>
+      <td><span>
+        {{item.afternoon}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="dinner"><span>Dinner</span></td>
+      <td><span>
+        {{item.dinner}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="evening"><span>Evening</span></td>
+      <td><span>
+        {{item.evening}}
+      </span> </td>
+      </tr>
+      {% endfor %}
+      </div>
+    <!----
+      <th>
+        <span class="day">July 4</span>
+        <span class="long">Sunday</span>
       </th>
       <th>
-        <span class="day">7</span>
+        <span class="day">July 5</span>
+        <span class="long">Monday</span>
+      </th>
+      <th>
+        <span class="day">July 6</span>
+        <span class="long">Tuesday</span>
+      </th>
+      <th>
+        <span class="day active">July 7</span>
+        <span class="long">Wednesday</span>
+      </th>
+      <th>
+        <span class="day">July 8</span>
+        <span class="long">Thursday</span>
+      </th>
+      <th>
+        <span class="day">July 9</span>
         <span class="long">Friday</span>
-        <span class="short">Fr</span>
       </th>
     </tr>
-  </thead>
+ <!-- </thead> 
   <tbody>
     <tr>
-      <td class="hour" rowspan="4"><span>1:00</span></td>
+      <td class="morning" rowspan="4"><span>Morning</span></td>
       <td></td>
       <td></td>
       <td></td>
@@ -82,7 +309,7 @@
       <td></td>
     </tr>
     <tr>
-      <td class="hour" rowspan="4"><span>2:00</span></td>
+      <td class="afternoon" rowspan="4"><span>Afternoon</span></td>
       <td></td>
       <td></td>
       <td></td>
@@ -120,7 +347,7 @@
     </tr>
     
     <tr>
-      <td class="hour" rowspan="4"><span>3:00</span></td>
+      <td class="dinner" rowspan="4"><span>Dinner</span></td>
       <td></td>
       <td></td>
       <td></td>
@@ -157,7 +384,7 @@
       <td></td>
     </tr>
     <tr>
-      <td class="hour" rowspan="4"><span>4:00</span></td>
+      <td class="evening" rowspan="4"><span>Evening</span></td>
       <td></td>
       <td></td>
       <td></td>
@@ -193,155 +420,7 @@
       <td></td>
       <td></td>
     </tr>
-    <tr>
-      <td class="hour" rowspan="4"><span>5:00</span></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="hour" rowspan="4"><span>6:00</span></td>
-      <td onclick="alert('test')"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="hour" rowspan="4"><span>7:00</span></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="hour" rowspan="4"><span>8:00</span></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
+    -->
 </table>
-   
-
+</div>
+ {% endblock %}

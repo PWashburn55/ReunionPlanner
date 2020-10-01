@@ -1,5 +1,45 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
+ <!--code from task manager mini-project -->
+<div class="row">
+    <ul>
+        {% for person in people %}
+        <li>
+            <div>
+                <div class="col s12 collapsible-body">
+                    <i class="material-icons">person</i>
+                    <span>
+                    {{person.name}}
+                    </span> 
+                </div>
+            </div>
+            <div class="col s12 collapsible-body">
+            <i class="material-icons">schedule</i>
+                <span>
+                {{person.time_zone}}
+                </span>
+            </div>
+              <div class="col s12 collapsible-body">
+              <i class="material-icons">check_box</i>
+                <span>
+                {{person.is_coming}} 
+                </span>
+            </div>
+              <div class="col s12 collapsible-body">
+               <i class="material-icons">hotel</i>
+                <span>
+                {{person.accommodations}} 
+                </span>
+            </div>
+             <div class="col s12 collapsible-body">
+             <i class="material-icons">restaurant</i>
+                <span>
+                {{person.dietary_restrictions}} 
+                </span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 
 {% endblock %}

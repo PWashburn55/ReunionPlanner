@@ -1,0 +1,50 @@
+{% extends 'base.html' %}{% block content %}
+<!--code from task manager mini-project-->
+<h3>Add People</h3>
+<div class="row">
+    <form action="{{ url_for('insert_item') }}" method="POST" class="col s12">
+          <div class="row">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <select id="schedule" name="day">
+                  <option value="" disabled selected>Choose Day</option>
+                  {% for item in schedule %}
+                      <option value="{{schedule.day}}">{{schedule.day}}</option>
+                  {% endfor %}
+                </select>
+                    <label>Day</label>
+                </div>
+            </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea name="morning" id="morning" type="text" class="materialize-textarea"></textarea>
+                <label for="schedule">Morning</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="afternoon" name="afternoon" type="text" class="materialize-textarea">
+                <label for="icon_prefix">Afternoon</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="dinner" name="dinner" type="text" class="materialize-textarea">
+                <label for="icon_prefix">Dinner</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="evening" name="evening" type="text">
+                <label for="icon_prefix">Evening</label>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Add Schedule Item
+                <i class="material-icons right"></i>
+             </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

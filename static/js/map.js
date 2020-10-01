@@ -1,4 +1,4 @@
-//code from freakyjolly.com & Rosie Resume 
+//code from freakyjolly.com & Rosie Resume walk-through
 var map;
 var InforObj = [];
 var niagaraFalls = {

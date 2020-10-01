@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Josefin Sans:100,200,300,400,500,600,700');
 
 /* navbar with code from W3 schools & Stack Overflow*/
+
+.nav-wrapper{
+ background-color: lightblue !important;
+}
+
  .topnav {
      background-color: #0AB3DE;
      width: 100%;
