@@ -1,8 +1,8 @@
 {% extends 'base.html' %}{% block content %}
 <!--code from task manager mini-project-->
-<h3>Edit Expenses</h3>
+<h3>Edit Expense</h3>
 <div class="row">
-    <form action="{{ url_for('update_expense') }}" method="POST" class="col s12">
+    <form action="{{ url_for('update_expense', expense_id=expense._id) }}" method="POST" class="col s12">
           <div class="row">
             <div class="row">
                 <div class="input-field col s12">

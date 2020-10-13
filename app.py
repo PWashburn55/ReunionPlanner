@@ -35,11 +35,11 @@ def add_person():
                            people=mongo.db.people.find(), person=the_person)
 
 
-@app.route('/insert_person', methods=['POST'])  # from task manager mini-project to add people
+@app.route('/insert_person', methods=['POST'])# from taskmanager to add people
 def insert_person():
     people = mongo.db.people
     people.insert_one(request.form.to_dict())
-    return redirect(url_for('get_people'), person=the_person)
+    return redirect(url_for('get_people'))
 
 
 @app.route('/edit_person/<person_id>')
@@ -57,12 +57,12 @@ def update_person(person_id):
                     'time_zone': request.form.get('time_zone'),
                     'is_coming': request.form.get('is_coming'),
                     'accommodations': request.form.get('accommodations'),
-                    'dietary_restrictions': request.form.get('dietary_restrictions')
+                    'diet': request.form.get('dietary_restrictions')
                   })
     return redirect(url_for('get_people'))
 
 
-@app.route('/delete_person/<person_id>')  # from task manager mini project to delete people
+@app.route('/delete_person/<person_id>')  # from task manager to delete people
 def delete_person(person_id):
     mongo.db.person.remove({'_id': ObjectId(person_id)})
     return redirect(url_for('get_people'))
@@ -70,14 +70,16 @@ def delete_person(person_id):
 
 @app.route('/get_schedule')   # from task manager mini-project to show schedule
 def get_schedule():
+    the_item = mongo.db.schedule.find()
     return render_template('schedule.html',
-                           schedule=mongo.db.schedule.find())
+                           schedule=mongo.db.schedule.find(), item=the_item)
 
 
 @app.route('/add_item')
 def add_item():
+    the_item = mongo.db.schedule.find()
     return render_template('addschedule.html',
-                           schedule=mongo.db.schedule.find(), item=item)
+                           schedule=mongo.db.schedule.find(), item=the_item)
 
 
 @app.route('/insert_item', methods=['POST'])
@@ -118,13 +120,16 @@ def delete_item(item_id):
 @app.route('/')  # code from task manager mini-project to show list of expenses
 @app.route('/get_expenses')
 def get_expenses():
-    return render_template("expenses.html", expenses=mongo.db.expenses.find())
+    the_expense = mongo.db.expenses.find()
+    return render_template("expenses.html", expenses=mongo.db.expenses.find(),
+            expense=the_expense)
 
 
 @app.route('/add_expense')  # from task manager mini-project to add expenses
 def add_expense():
+    the_expense = mongo.db.expenses.find()
     return render_template('addexpenses.html',
-                           expenses=mongo.db.expenses.find(), expense=expense)
+                           expenses=mongo.db.expenses.find(), expense=the_expense)
 
 
 @app.route('/insert_expense', methods=['POST'])  # from task manager mini-project to add expenses
@@ -137,12 +142,14 @@ def insert_expense():
 @app.route('/edit_expense/<expense_id>')
 def edit_expense(expense_id):
     the_expense = mongo.db.expenses.find_one({"_id": ObjectId(expense_id)})
+    all_expenses = mongo.db.all_expenses.find()
     return render_template('editexpenses.html', expense=the_expense)
 
 
 @app.route('/update_expense/<expense_id>', methods=["POST"])
 def update_expense(expense_id):
     expenses = mongo.db.expenses
+    the_expense = mongo.db.expenses.find_one({"_id": ObjectId(expense_id)})
     expenses.update({'_id': ObjectId(expense_id)},
                     {
                         'day': request.form.get('day'),
@@ -150,7 +157,7 @@ def update_expense(expense_id):
                         'person': request.form.get('person'),
                         'notes': request.form.get('notes')
                     })
-    return redirect(url_for('get_expenses'))
+    return redirect(url_for('get_expenses'), expense=the_expense)
 
 
 @app.route('/delete_expense/<expense_id>')  # from task manager mini project to delete expense
