@@ -9,7 +9,24 @@
 
 <body>
     <header>
-        
+          <nav><!--from task manager mini-project & materialize -->
+            <div class="nav-wrapper">
+                <a href="home.html" class="brand-logo"> Reunion Planner</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{{url_for('get_home')}}">Home</a></li>
+                    <li><a href="{{url_for('get_people')}}">People</a></li>
+                    <li><a href="{{url_for('get_schedule')}}">Schedule</a></li>
+                    <li><a href="{{url_for('get_expenses')}}">Expenses</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                   <li><a href="home.html">Home</a></li>
+                    <li><a href="{{url_for('get_people')}}">People</a></li>
+                    <li><a href="{{url_for('get_schedule')}}">Schedule</a></li>
+                    <li><a href="{{url_for('get_expenses')}}">Expenses</a></li>
+                </ul>
+            </div>
+        </nav>
      </header>
     <div class="container">
         {% block content %} {% endblock %}

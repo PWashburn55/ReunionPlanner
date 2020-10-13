@@ -7,7 +7,7 @@
 <table>
   <!--<thead>-->
     <div class="col s12 m6 l1 collapsible-body">
-    {% for people in person %}
+    {% for person in people %}
       <tr>
       <th>
         <span>{{person.name}}</span>
@@ -43,7 +43,7 @@
       </tr>
       {% endfor %}
       </div>
-      <div class="col s12 m6 l1 collapsible-body">
+     <!-- <div class="col s12 m6 l1 collapsible-body">
     {% for person in people %}
       <tr>
       <th>

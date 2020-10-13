@@ -9,8 +9,8 @@
                     <i class="material-icons prefix">poll</i>
                     <select id="schedule" name="day">
                   <option value="" disabled selected>Choose Day</option>
-                  {% for item in schedule %}
-                      <option value="{{schedule.day}}">{{schedule.day}}</option>
+                  {% for day in days %}
+                      <option value="{{day.day}}">{{day.day}}</option>
                   {% endfor %}
                 </select>
                     <label>Day</label>
@@ -47,4 +47,5 @@
         </div>
     </form>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {% endblock %}

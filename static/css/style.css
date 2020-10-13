@@ -2,8 +2,12 @@
 
 /* navbar with code from W3 schools & Stack Overflow*/
 
-.nav-wrapper{
- background-color: lightblue !important;
+.nav-wrapper {
+    background-color: lightblue !important;
+}
+
+.brand-logo {
+    padding-left: 15px !important;
 }
 
  .topnav {
@@ -72,7 +76,7 @@
      background-repeat: no-repeat;
      background-size: cover;
      min-height: 240px;
-     width: 100%;
+     /*width: 100%;*/
      max-width: 100% ;
      height: auto;
      transition: all .5s ease-in-out;
