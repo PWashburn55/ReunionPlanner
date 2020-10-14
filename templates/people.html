@@ -3,11 +3,15 @@
 
 <!--code from codepen.io, task manager project & stack overflow-->
 <div class="container">
-<h3>People</h3>  
-<table>
+<h3>People</h3> 
+<a href="{{url_for('add_person' )}}" class="waves-effect waves-light btn btn_small green">Add new person</a> 
+    <i class="material-icons right"></i> 
+
   <!--<thead>-->
-    <div class="col s12 m6 l1 collapsible-body">
+    
     {% for person in people %}
+    <table>
+    <div class="col s12 m6 l1 collapsible-body">
       <tr>
       <th>
         <span>{{person.name}}</span>
@@ -42,7 +46,5 @@
       </div>
       </table>
       {% endfor %}
-      <a href="{{url_for('add_person' )}}" class="waves-effect waves-light btn btn_small blue">Add Someone</a> 
-            <i class="material-icons right"></i>
       </div>
       {% endblock %}

@@ -4,9 +4,13 @@
 <!--code from codepen.io, task manager project & stack overflow-->
 <div class="container">
 <h3>Schedule</h3>
+<div>
+    <a href="{{url_for('add_item', item_id=item._id)}}" class="waves-effect waves-light btn btn_small green">Add Schedule Item</a> 
+            <i class="material-icons right"></i>   
+  </div>
+ {% for item in schedule %}
 <table>
     <div class="col s12 m6 l1 collapsible-body">
-    {% for item in schedule %}
       <tr>
       <th>
         <span>{{item.day}}, </span>
@@ -48,18 +52,14 @@
       <td class="evening"><span>Evening</span></td>
       <td><span>
         {{item.evening}}
-      </td></span>
+      </span> 
       <a href="{{url_for('edit_item', item_id=item._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a> 
             <i class="material-icons right"></i>
       <a href="{{url_for('delete_item', item_id=item._id)}}" class="waves-effect waves-light btn btn_small">Del</a>
-      
+      </td>
       </tr>
       </table>
+       </div>
       {% endfor %}
-      </div>
- <div>
-    <a href="{{url_for('add_item', item_id=item._id)}}" class="waves-effect waves-light btn btn_small blue">Add Schedule Item</a> 
-            <i class="material-icons right"></i>   
-  </div>
 
  {% endblock %}

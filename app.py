@@ -120,10 +120,11 @@ def delete_item(item_id):
 
 @app.route('/')  # code from task manager mini-project to show list of expenses
 @app.route('/get_expenses')
-def get_expenses():
-    the_expense = mongo.db.expenses.find()
+def get_expenses(self):
+    the_expense = mongo.db.expenses.find
+    total = add_all_expenses(self, the_expense['amount'])
     return render_template("expenses.html", expenses=mongo.db.expenses.find(),
-            expense=the_expense)
+                           expense=the_expense, total=total)
 
 
 @app.route('/add_expense')  # from task manager mini-project to add expenses
@@ -165,6 +166,11 @@ def update_expense(expense_id):
 def delete_expense(expense_id):
     mongo.db.expenses.remove({'_id': ObjectId(expense_id)})
     return redirect(url_for('get_expenses'))
+
+
+def add_all_expenses(self, list_amounts):
+    total = sum(list_amounts)
+    return total
 
 
 if __name__ == '__main__':
