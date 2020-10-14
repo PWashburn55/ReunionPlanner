@@ -7,19 +7,14 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">poll</i>
-                    <select id="schedule" name="day">
+                    <select id="item" name="day">
                   <option value="" disabled selected>Choose Day</option>
-                  {% for day in days %}
+                  {% for day in schedule %}
                       <option value="{{day.day}}">{{day.day}}</option>
                   {% endfor %}
                 </select>
                     <label>Day</label>
                 </div>
-            </div>
-            <div class="input-field col s12">
-                <i class="material-icons prefix">assignment</i>
-                <input id="task_name" name="task_name" type="text">
-                <label for="icon_prefix">Activity</label>
             </div>
         </div>
         <div class="row">
@@ -31,9 +26,30 @@
         </div>
          <div class="row">
             <div class="input-field col s12">
+                <i class="material-icons prefix">schedule</i>
+                <textarea name="afternoon" id="afternoon" class="materialize-textarea"></textarea>
+                <label for="icon_schedule">Afternoon</label>
+            </div>
+        </div>
+         <div class="row">
+            <div class="input-field col s12">
                 <i class="material-icons prefix">restaurant</i>
                 <textarea name="dinner" id="dinner" class="materialize-textarea"></textarea>
                 <label for="icon_restaurant">Dinner</label>
+            </div>
+        </div>
+          <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">restaurant</i>
+                <textarea name="dinner_name" id="dinner_name" class="materialize-textarea"></textarea>
+                <label for="icon_person">Dinner Name</label>
+            </div>
+        </div>
+         <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">restaurant</i>
+                <textarea name="evening" id="evening" class="materialize-textarea"></textarea>
+                <label for="icon_restaurant">Evening</label>
             </div>
         </div>
         <div class="row">

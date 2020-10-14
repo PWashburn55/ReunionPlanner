@@ -1,65 +1,56 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 
- <!--code from task manager mini-project & stack overflow & jinja docs-->
-<div class="row">
-    <h3>Expenses</h3>
-    <div>
-    </div>
-       <ul class="collapsible" data-collapsible="accordion">
-        {% for expense in expenses %}
-        <li>
-            <div class="collapsible-header">
-                <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small">Del</a>
-                <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a> 
-                <div class="expenses_header">
-                    <strong>{{expense.amount}}</strong>
-                </div>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-    <ul>
-        {% for expense in expenses %}
-        <li>
-            <div>
-                <div class="col s12 collapsible-body">
-                    <i class="material-icons">today</i>
-                    <span>
-                    {{expenses.day}}
-                    </span> 
-                </div>
-            </div>
-            <div class="col s12 collapsible-body" type="number" id="calcsum">
-            <i class="material-icons">account_balance_wallet</i>
-                <span>
-                {{expenses.amount}}
-                </span>
-            </div>
-              <div class="col s12 collapsible-body">
-              <i class="material-icons">person</i>
-                <span>
-                {{expenses.person}} 
-                </span>
-            </div>
-              <div class="col s12 collapsible-body">
-               <i class="material-icons">comment</i>
-                <span>
-                {{expenses.notes}} 
-                </span>
-            </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Edit Expense
+<!--code from codepen.io, task manager project & stack overflow-->
+<div class="container">
+<h3>Expenses</h3>  
+<table>
+  <!--<thead>-->
+    <div class="col s12 m6 l1 collapsible-body">
+    {% for expense in expenses %}
+      <tr>
+      <th>
+        <span>{{expense.day}}</span>
+      </th>
+      </tr>
+      <tr>
+      <td class="day"><span>Day</span></td>
+      <td><span>
+        {{expense.day}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="amount"><span>Amount</span></td>
+      <td><span type="number" id="calcsum">
+        {{expense.amount}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="name"><span>Name of Person</span></td>
+      <td><span>
+        {{expense.name}}
+      </span> </td>
+      </tr>
+      <tr>
+      <td class="notes"><span>Notes</span></td>
+      <td><span>
+        {{expense.note}}
+      </span> </td>
+
+      </tr>
+       <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a> 
             <i class="material-icons right"></i>
-            </button>
-        </li>
-        {% endfor %}
-    </ul>
-        {{ expenses|sum(attribute='amount') }}
-</div>
-<div>
- <!--<button class="btn waves-effect waves-light" type="submit" name="action">Add Expense-->
- <a href="{{url_for('add_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small blue">Add Expense</a> 
-     <i class="material-icons right"></i>
- </button>
-</div>
-
-{% endblock %}
+       <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small green">Del</a> 
+            <i class="material-icons right"></i>
+      </div>
+      </table>
+      {% endfor %}
+      </div>
+      <div>
+      {{ expenses|sum(attribute='amount') }}
+      </div>
+      <div>
+      <a href="{{url_for('add_expense' )}}" class="waves-effect waves-light btn btn_small blue">Add Expense</a> 
+            <i class="material-icons right"></i>
+      </div>
+      {% endblock %}
