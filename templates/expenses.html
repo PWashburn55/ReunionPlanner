@@ -4,13 +4,21 @@
 <!--code from codepen.io, task manager project & stack overflow-->
 <div class="container">
 <h3>Expenses</h3>  
+<div>
+      <a href="{{url_for('add_expense' )}}" class="waves-effect waves-light btn btn_small green">Add Expense</a> 
+            <i class="material-icons right"></i>
+      </div>
+{% for expense in expenses %}
 <table>
   <!--<thead>-->
     <div class="col s12 m6 l1 collapsible-body">
-    {% for expense in expenses %}
       <tr>
       <th>
         <span>{{expense.day}}</span>
+          <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a> 
+            <i class="material-icons right"></i>
+        <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small">Del</a>
+            <i class="material-icons right"></i>
       </th>
       </tr>
       <tr>
@@ -38,19 +46,11 @@
       </span> </td>
 
       </tr>
-       <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a> 
-            <i class="material-icons right"></i>
-       <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small green">Del</a> 
-            <i class="material-icons right"></i>
       </div>
       </table>
       {% endfor %}
       </div>
       <div>
       {{ expenses|sum(attribute='amount') }}
-      </div>
-      <div>
-      <a href="{{url_for('add_expense' )}}" class="waves-effect waves-light btn btn_small blue">Add Expense</a> 
-            <i class="material-icons right"></i>
       </div>
       {% endblock %}

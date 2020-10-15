@@ -10,8 +10,7 @@
   </div>
  {% for item in schedule %}
 <table>
-    <div class="col s12 m6 l1 collapsible-body">
-      <tr>
+      <tr class="col s12 m6 l1">
       <th>
         <span>{{item.day}}, </span>
         <span> {{item.date}}</span>
@@ -27,7 +26,7 @@
       <a href="{{url_for('delete_item', item_id=item._id)}}" class="waves-effect waves-light btn btn_small">Del</a>
       </td>
       </tr>
-      <tr>
+      <tr class="col s12 m6 l1">
       <td class="afternoon"><span>Afternoon</span></td>
       <td><span>
         {{item.afternoon}}
@@ -37,7 +36,7 @@
       <a href="{{url_for('delete_item', item_id=item._id)}}" class="waves-effect waves-light btn btn_small">Del</a>
       </td>
       </tr>
-      <tr>
+      <tr class="col s12 m6 l1">
       <td class="dinner"><span>Dinner</span></td>
       <td><span>
         {{item.dinner_description}}
@@ -48,7 +47,7 @@
       <a href="{{url_for('delete_item', item_id=item._id)}}" class="waves-effect waves-light btn btn_small">Del</a>
        </td>
       </tr>
-      <tr>
+      <tr class="col s12 m6 l1">
       <td class="evening"><span>Evening</span></td>
       <td><span>
         {{item.evening}}
@@ -58,8 +57,8 @@
       <a href="{{url_for('delete_item', item_id=item._id)}}" class="waves-effect waves-light btn btn_small">Del</a>
       </td>
       </tr>
-      </table>
-       </div>
+</table>
+
       {% endfor %}
 
  {% endblock %}

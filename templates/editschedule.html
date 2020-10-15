@@ -1,9 +1,9 @@
-{% extends 'base.html'%} {% block content %}
-
-<h3>Edit Schedule</h3>
+{% extends 'base.html' %}{% block content %}
+<!--code from task manager mini-project-->
+<h3>Edit Schedule Item</h3>
 <div class="row">
     <form action="{{ url_for('update_item', item_id=item._id) }}" method="POST"  class="col s12">
-        <div class="row">
+          <div class="row">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">poll</i>
@@ -16,50 +16,42 @@
                     <label>Day</label>
                 </div>
             </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea name="morning" id="morning" type="text" class="materialize-textarea"></textarea>
+                <label for="schedule">Morning</label>
+            </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">schedule</i>
-                <textarea name="morning" id="morning" class="materialize-textarea"></textarea>
-                <label for="icon_schedule">Morning</label>
-            </div>
-        </div>
-         <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">schedule</i>
-                <textarea name="afternoon" id="afternoon" class="materialize-textarea"></textarea>
-                <label for="icon_schedule">Afternoon</label>
-            </div>
-        </div>
-         <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">restaurant</i>
-                <textarea name="dinner" id="dinner" class="materialize-textarea"></textarea>
-                <label for="icon_restaurant">Dinner</label>
-            </div>
-        </div>
-          <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">restaurant</i>
-                <textarea name="dinner_name" id="dinner_name" class="materialize-textarea"></textarea>
-                <label for="icon_person">Dinner Name</label>
-            </div>
-        </div>
-         <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">restaurant</i>
-                <textarea name="evening" id="evening" class="materialize-textarea"></textarea>
-                <label for="icon_restaurant">Evening</label>
+                <input id="afternoon" name="afternoon" type="text" class="materialize-textarea">
+                <label for="icon_prefix">Afternoon</label>
             </div>
         </div>
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Edit
+            <div class="input-field col s12">
+                <input id="dinner" name="dinner" type="text" class="materialize-textarea">
+                <label for="icon_prefix">Dinner</label>
+            </div>
+        </div>
+         <div class="row">
+            <div class="input-field col s12">
+                <input id="dinner_name" name="dinner_name" type="text" class="materialize-textarea">
+                <label for="icon_prefix">Dinner Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="evening" name="evening" type="text">
+                <label for="icon_prefix">Evening</label>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Edit Schedule Item
                 <i class="material-icons right"></i>
              </button>
         </div>
     </form>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 {% endblock %}
