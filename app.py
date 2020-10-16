@@ -106,8 +106,8 @@ def update_item(item_id):
                         'morning': request.form.get('morning'),
                         'afternoon': request.form.get('afternoon'),
                         'dinner': request.form.get('dinner'),
+                        'dinner_name': request.form.get('dinner_name'),
                         'evening': request.form.get('evening'),
-                        'notes': request.form.get('notes')
                     })
     return redirect(url_for('get_schedule'))
 

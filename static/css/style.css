@@ -77,7 +77,7 @@
      background-size: cover;
      min-height: 240px;
      /*width: 100%;*/
-     max-width: 100% ;
+     max-width: 100% ; !important
      height: auto;
      transition: all .5s ease-in-out;
      -moz-transition: all .5s ease-in-out;
