@@ -25,7 +25,7 @@ def get_home():
 @app.route('/get_people')
 def get_people():
     the_person = mongo.db.people.find()
-    return render_template('people.html', people=the_person)
+    return render_template('people.html', people=the_person, person=the_person)
 
 
 @app.route('/add_person')  # from task manager mini-project to add people

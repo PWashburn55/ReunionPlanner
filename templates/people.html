@@ -1,50 +1,79 @@
-{% extends 'base.html' %}
-{% block content %}
-
-<!--code from codepen.io, task manager project & stack overflow-->
+{% extends 'base.html'%} {% block content %}
 <div class="container">
-<h3>People</h3> 
-<a href="{{url_for('add_person' )}}" class="waves-effect waves-light btn btn_small green">Add new person</a> 
-    <i class="material-icons right"></i> 
-
-  <!--<thead>-->
-    
-    {% for person in people %}
-    <table>
-    <div class="col s12 m6 l1 collapsible-body">
-      <tr>
-      <th>
-        <span>{{person.name}}</span>
-      <a href="{{url_for('edit_person', person_id=person._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a> 
+<div class="row">
+    <div class="col s6 m6">
+        <h3>People</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col s6 m6">
+        <i class="material-icons right"></i>
+        <a href="{{url_for('add_person', person_id=person._id)}}" class="waves-effect waves-light btn btn_small green">Add New Person</a> 
+    </div>
+</div>
+    <ul>
+        {% for person in people %}
+        <li>
+            <div class="row">
+            <div class="col s6 m6">
+            <h5>  <span>{{person.name}}</span></h5>
+            </div>
+            <div class="col s6 m6">
             <i class="material-icons right"></i>
-      </th>
-      </tr>
-      <tr>
-      <td class="timezone"><span>Time Zone</span></td>
-      <td><span>
-        {{person.time_zone}}
-      </span> </td>
-      </tr>
-      <tr>
-      <td class="is_coming"><span>Is Coming?</span></td>
-      <td><span>
-        {{person.is_coming}}
-      </span> </td>
-      </tr>
-      <tr>
-      <td class="accommodations"><span>Accommodations</span></td>
-      <td><span>
-        {{person.accommodations}}
-      </span> </td>
-      </tr>
-      <tr>
-      <td class="diet"><span>Dietary Restrictions</span></td>
-      <td><span>
-        {{person.diet}}
-      </span> </td>
-      </tr>
-      </div>
-      </table>
-      {% endfor %}
-      </div>
-      {% endblock %}
+            <a href="{{url_for('edit_person', person_id=person._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a> 
+            <i class="material-icons right"></i> 
+            <a href="{{url_for('delete_person', person_id=person._id)}}" class="waves-effect waves-light btn btn_small">Del</a> 
+            <i class="material-icons right"></i>  
+            </div>
+            </div>
+            
+            <div class="row">
+            <div class="col s6 m6">
+            <span>Time Zone</span>
+            </div>
+            <div class="col s6 m6">
+            {{person.time_zone}}
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col s6 m6">
+            <span>Is Coming?</span>
+            </div>
+            <div class="checkbox col s6 m6">
+                <label>
+                    {% if person.is_coming %}
+                        <input id="is_coming" name="is_coming" type="checkbox" checked>
+                        <span class="checkbox"></span>
+                    </label>
+                    <label>
+                    {% else %}
+                        <input id="is_coming" name="is_coming" type="checkbox">
+                        <span class="checkbox"></span>
+                    {% endif %}
+                </label>
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col s6 m6">
+            <span>Accommodations</span>
+            </div>
+            <div class="col s6 m6">
+            {{person.accommodations}}
+            </div>
+            </div>
+
+              <div class="row">
+            <div class="col s6 m6">
+            <span>Dietary Restrictions</span>
+            </div>
+            <div class="col s6 m6">
+            {{person.diet}}
+            </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
