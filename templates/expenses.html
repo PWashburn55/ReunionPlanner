@@ -1,56 +1,69 @@
-{% extends 'base.html' %}
-{% block content %}
-
-<!--code from codepen.io, task manager project & stack overflow-->
+{% extends 'base.html'%} {% block content %}
 <div class="container">
-<h3>Expenses</h3>  
-<div>
-      <a href="{{url_for('add_expense' )}}" class="waves-effect waves-light btn btn_small green">Add Expense</a> 
+<div class="row">
+    <div class="col s6 m6">
+        <h3>Expenses</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col s6 m6">
+        <i class="material-icons right"></i>
+        <a href="{{url_for('add_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small green">Add New Expense</a> 
+    </div>
+</div>
+    <ul>
+        {% for expense in expenses %}
+        <li>
+            <div class="row">
+            <div class="col s6 m6">
+            <h5>  <span>{{expense.exp_name}}</span></h5>
+            </div>
+            <div class="col s6 m6">
             <i class="material-icons right"></i>
-      </div>
-{% for expense in expenses %}
-<table>
-  <!--<thead>-->
-    <div class="col s12 m6 l1 collapsible-body">
-      <tr>
-      <th>
-        <span>{{expense.day}}</span>
-          <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a> 
-            <i class="material-icons right"></i>
-        <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small">Del</a>
-            <i class="material-icons right"></i>
-      </th>
-      </tr>
-      <tr>
-      <td class="day"><span>Day</span></td>
-      <td><span>
-        {{expense.day}}
-      </span> </td>
-      </tr>
-      <tr>
-      <td class="amount"><span>Amount</span></td>
-      <td><span type="number" id="calcsum">
-        {{expense.amount}}
-      </span> </td>
-      </tr>
-      <tr>
-      <td class="name"><span>Name of Person</span></td>
-      <td><span>
-        {{expense.person}}
-      </span> </td>
-      </tr>
-      <tr>
-      <td class="notes"><span>Notes</span></td>
-      <td><span>
-        {{expense.note}}
-      </span> </td>
+            <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a> 
+            <i class="material-icons right"></i> 
+            <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small">Del</a> 
+            <i class="material-icons right"></i>  
+            </div>
+            </div>
+            
+            <div class="row">
+            <div class="col s6 m6">
+            <span>Day</span>
+            </div>
+            <div class="col s6 m6">
+            {{expense.day}}
+            </div>
+            </div>
 
-      </tr>
-      </div>
-      </table>
-      {% endfor %}
-      </div>
-      <div>
-      {{ expenses|sum(attribute='amount') }}
-      </div>
-      {% endblock %}
+            <div class="row">
+            <div class="col s6 m6">
+            <span>Amount</span>
+            </div>
+            <div class="col s6 m6" type="number" id="calcsum">
+            {{expense.amount}}
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col s6 m6">
+            <span>Person</span>
+            </div>
+            <div class="col s6 m6">
+            {{expense.person}}
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col s6 m6">
+            <span>Notes</span>
+            </div>
+            <div class="col s6 m6">
+            {{expense.notes}}
+            </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

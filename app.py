@@ -18,7 +18,7 @@ mongo = PyMongo(app)
 @app.route('/')  # code from task manager mini-project
 @app.route('/get_home')
 def get_home():
-    return render_template("home.html")
+    return render_template("index.html")
 
 
 @app.route('/')  # from task manager mini-project to show list of people
@@ -159,6 +159,7 @@ def update_expense(expense_id):
     the_expense = mongo.db.expenses.find_one({"_id": ObjectId(expense_id)})
     expenses.update({'_id': ObjectId(expense_id)},
                     {
+                        'exp_name': request.form.get('exp_name'),
                         'day': request.form.get('day'),
                         'amount': request.form.get('amount'),
                         'person': request.form.get('person'),

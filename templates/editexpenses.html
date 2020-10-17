@@ -4,6 +4,12 @@
 <div class="row">
     <form action="{{ url_for('update_expense', expense_id=expense._id) }}" method="POST" class="col s12">
           <div class="row">
+            <div class="input-field col s12">
+                <textarea name="exp_name" id="exp_name" type="text" class="materialize-textarea"></textarea>
+                <label for="expenses">Expense Name</label>
+            </div>
+        </div>
+          <div class="row">
             <div class="row">
                 <div class="input-field col s12">
                     <select id="day" name="day">
