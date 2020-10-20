@@ -5,7 +5,7 @@
     <form action="{{ url_for('update_expense', expense_id=expense._id) }}" method="POST" class="col s12">
           <div class="row">
             <div class="input-field col s12">
-                <textarea name="exp_name" id="exp_name" type="text" class="materialize-textarea"></textarea>
+                <textarea name="exp_name" id="exp_name" type="text" class="materialize-textarea">{{ expense.exp_name }}</textarea>
                 <label for="expenses">Expense Name</label>
             </div>
         </div>
@@ -23,19 +23,19 @@
             </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea name="amount" id="amount" type="number" class="materialize-textarea"></textarea>
+                <textarea name="amount" id="amount" type="number" class="materialize-textarea">{{ expense.amount }}</textarea>
                 <label for="expenses">Amount</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="person" name="person" type="text" class="materialize-textarea">
+                <input id="person" name="person" type="text" class="materialize-textarea">{{ expense.person }}
                 <label for="icon_prefix">Person</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="notes" name="notes" type="text" class="materialize-textarea">
+                <input id="notes" name="notes" type="text" class="materialize-textarea">{{ expense.notes }}
                 <label for="icon_prefix">Notes</label>
             </div>
         </div>

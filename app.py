@@ -62,10 +62,10 @@ def update_person(person_id):
     return redirect(url_for('get_people'))
 
 
-@app.route('/delete_person/<person_id>')  # from task manager to delete people
-def delete_person(person_id):
-    mongo.db.person.remove({'_id': ObjectId(person_id)})
-    return redirect(url_for('get_people'))
+#@app.route('/delete_person/<person_id>')  # from task manager to delete people
+#def delete_person(person_id):
+   # mongo.db.person.remove({'_id': ObjectId(person_id)})
+    # return redirect(url_for('get_people'))
 
 
 @app.route('/get_schedule')   # from task manager mini-project to show schedule
@@ -92,7 +92,6 @@ def insert_item():
 @app.route('/edit_item/<item_id>')
 def edit_item(item_id):
     the_item = mongo.db.schedule.find_one({"_id": ObjectId(item_id)})
-    #all_schedule = mongo.db.all_schedule.find()
     return render_template('editschedule.html',
                            schedule=mongo.db.schedule.find(), item=the_item)
 
@@ -112,10 +111,20 @@ def update_item(item_id):
     return redirect(url_for('get_schedule'))
 
 
-@app.route('/delete_item/<item_id>')
-def delete_item(item_id):
-    mongo.db.schedule.remove({'_id': ObjectId(item_id)})
+@app.route('/update_item.morning/<item.morning_id>', methods=["POST"])
+def update_item.morning(item.morning_id):
+    schedule = mongo.db.schedule
+    schedule.update({'_id': ObjectId(item.morning_id)},
+                    {
+                        'morning': request.form.get('morning'),
+                    })
     return redirect(url_for('get_schedule'))
+
+
+#@app.route('/delete_item/<item_id>')
+#def delete_item(item_id):
+    #mongo.db.schedule.remove({'_id': ObjectId(item_id)})
+    #return redirect(url_for('get_schedule'))
 
 
 @app.route('/')  # code from task manager mini-project to show list of expenses
@@ -148,9 +157,9 @@ def insert_expense():
 @app.route('/edit_expense/<expense_id>')
 def edit_expense(expense_id):
     the_expense = mongo.db.expenses.find_one({"_id": ObjectId(expense_id)})
-    all_expenses = mongo.db.all_expenses.find()
-    return render_template('editexpenses.html', 
-                            expenses=mongo.db.expenses.find(), expense=the_expense)
+    return render_template('editexpenses.html',
+                        expenses=mongo.db.expenses.find(),
+                        expense=the_expense)
 
 
 @app.route('/update_expense/<expense_id>', methods=["POST"])
