@@ -111,14 +111,14 @@ def update_item(item_id):
     return redirect(url_for('get_schedule'))
 
 
-@app.route('/update_item.morning/<item.morning_id>', methods=["POST"])
-def update_item.morning(item.morning_id):
-    schedule = mongo.db.schedule
-    schedule.update({'_id': ObjectId(item.morning_id)},
-                    {
-                        'morning': request.form.get('morning'),
-                    })
-    return redirect(url_for('get_schedule'))
+#@app.route('/update_item.morning/<item.morning_id>', methods=["POST"])
+#def update_item.morning(item.morning_id):
+    #schedule = mongo.db.schedule
+    #schedule.update({'_id': ObjectId(item.morning_id)},
+                  #  {
+                  #      'morning': request.form.get('morning'),
+                  #  })
+   # return redirect(url_for('get_schedule'))
 
 
 #@app.route('/delete_item/<item_id>')
@@ -154,14 +154,19 @@ def insert_expense():
     return redirect(url_for('get_expenses'))
 
 
+#@app.route('/edit_expense/<expense_id>')
+#def edit_expense(expense_id):
+   # the_expense = mongo.db.expenses.find_one({"_id": ObjectId(expense_id)})
+   # return render_template('editexpenses.html',
+                    #    expenses=mongo.db.expenses.find(), expense=the_expense)
+
+
 @app.route('/edit_expense/<expense_id>')
 def edit_expense(expense_id):
     the_expense = mongo.db.expenses.find_one({"_id": ObjectId(expense_id)})
-    return render_template('editexpenses.html',
-                        expenses=mongo.db.expenses.find(),
-                        expense=the_expense)
+    return render_template('editexpenses.html', expense=the_expense)
 
-
+#
 @app.route('/update_expense/<expense_id>', methods=["POST"])
 def update_expense(expense_id):
     expenses = mongo.db.expenses
@@ -174,7 +179,7 @@ def update_expense(expense_id):
                         'person': request.form.get('person'),
                         'notes': request.form.get('notes')
                     })
-    return redirect(url_for('get_expenses'), expense=the_expense)
+    return redirect(url_for('get_expenses'), the_expense = expense)
 
 
 @app.route('/delete_expense/<expense_id>')  # from task mgr to delete expense
