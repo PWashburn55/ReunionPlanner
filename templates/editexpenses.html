@@ -14,7 +14,7 @@
                 <div class="input-field col s12">
                     <select id="day" name="day">
                   <option value="" disabled selected>Choose Day</option>
-                  {% for day in expenses %}
+                  {% for day in days %}
                       <option value="{{day.day}}">{{day.day}}</option>
                   {% endfor %}
                 </select>

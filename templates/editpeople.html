@@ -10,6 +10,15 @@
                 <label for="icon_prefix">Name</label>
             </div>
         </div>
+         <div class="row">
+             <div class="switch">
+                <label>
+                <input id="is_coming" name="is_coming" type="checkbox">
+                <span class="lever"></span>
+                    Is Coming
+                </label>
+            </div>
+         </div>
         <div class="row">
             <div class="input-field col s12">
                 <!--<i class="material-icons prefix">schedule</i>-->
@@ -17,19 +26,21 @@
                 <label for="icon_schedule">Time Zone</label>
             </div>
         </div>
-        <div class="row">
+        <!---<div class="row">
             <div class="checkbox">
                 <label>
                     {% if person.is_coming %}
-                        <input id="is_coming" name="is_coming" type="checkbox" checked>
+                        <input id="is_coming" name="is_coming" type="checkbox" checked="checked"/>
+                    </label>
+                    <label>
                     {% else %}
-                        <input id="is_coming" name="is_coming" type="checkbox">
+                        <input id="is_coming" name="is_coming" type="checkbox"/>
                     {% endif %}
                   <span class="checkbox"></span>
-                  Is Coming
+                  Is Coming?
                 </label>
             </div>
-        </div>
+        </div>--->
          <div class="row">
             <div class="input-field col s12">
                 <!--<i class="material-icons prefix">hotel</i>-->

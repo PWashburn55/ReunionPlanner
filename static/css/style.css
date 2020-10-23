@@ -97,6 +97,20 @@
     min-height: 50px;
 }
 
+/*buttons from task manager*/
+.btn_small {
+    height: 24px;
+    width: 60px;
+    line-height: 24px;
+    margin: 5px 5px;
+    padding: 0 0.5em;
+    float: none;
+}
+
+.btn {
+    float: none;
+}
+
 /*footer with code from W3 schools*/
 .above-footer {
     min-height: 25px;
@@ -111,10 +125,19 @@
    background-color: lightblue !important;
    color: white;
    text-align: left;
+   opacity: 100%;
 }
 
 .footer-text {
     padding-left: 10px;
     color: white;
+}
+
+.page-footer {
+    background-color: lightblue !important
+}
+
+.footer-copyright {
+    background-color: lightblue !important
 }
 

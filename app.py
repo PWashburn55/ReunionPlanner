@@ -130,13 +130,17 @@ def update_item(item_id):
 @app.route('/')  # code from task manager mini-project to show list of expenses
 @app.route('/get_expenses')
 def get_expenses():
-    the_expense = mongo.db.expenses.find()
+    expenses = mongo.db.expenses.find()
+    #the_expense = mongo.db.expenses.find()
+    total = 0
+
+    
     # the_expense_e = mongo.db.expenses.find({ }, { amounts: 1 })
     # print("EXPENSES")
     # print(the_expense_e)
     # total = add_all_expenses(the_expense_e)
-    return render_template("expenses.html", expenses=mongo.db.expenses.find(),
-                           expense=the_expense)
+    return render_template("expenses.html", expenses=expenses,
+                           total=total)
 
 
 @app.route('/add_expense')  # from task manager mini-project to add expenses
@@ -150,6 +154,7 @@ def add_expense():
 @app.route('/insert_expense', methods=['POST'])  # from task mgr to add expense
 def insert_expense():
     expenses = mongo.db.expenses
+    the_expense = mongo.db.expenses.find()
     expenses.insert_one(request.form.to_dict())
     return redirect(url_for('get_expenses'))
 
@@ -166,7 +171,7 @@ def edit_expense(expense_id):
     the_expense = mongo.db.expenses.find_one({"_id": ObjectId(expense_id)})
     return render_template('editexpenses.html', expense=the_expense)
 
-#
+
 @app.route('/update_expense/<expense_id>', methods=["POST"])
 def update_expense(expense_id):
     expenses = mongo.db.expenses
@@ -179,7 +184,7 @@ def update_expense(expense_id):
                         'person': request.form.get('person'),
                         'notes': request.form.get('notes')
                     })
-    return redirect(url_for('get_expenses'), the_expense = expense)
+    return redirect(url_for('get_expenses'), the_expense=expense)
 
 
 @app.route('/delete_expense/<expense_id>')  # from task mgr to delete expense
