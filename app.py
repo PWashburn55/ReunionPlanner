@@ -179,12 +179,12 @@ def update_expense(expense_id):
     expenses.update({'_id': ObjectId(expense_id)},
                     {
                         'exp_name': request.form.get('exp_name'),
-                        'day': request.form.get('day'),
+                        'date': request.form.get('date'),
                         'amount': request.form.get('amount'),
                         'person': request.form.get('person'),
                         'notes': request.form.get('notes')
                     })
-    return redirect(url_for('get_expenses'), the_expense=expense)
+    return redirect(url_for('get_expenses'), expense=the_expense)
 
 
 @app.route('/delete_expense/<expense_id>')  # from task mgr to delete expense
