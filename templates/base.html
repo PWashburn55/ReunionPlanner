@@ -4,12 +4,14 @@
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+<title>Reunion Planner</title>
 </head>
 
 <body>
     <header>
-          <nav><!--from task manager mini-project & materialize -->
+          <nav class="nav"><!--from task manager mini-project & materialize -->
             <div class="nav-wrapper">
                 <a href="home.html" class="brand-logo"> Reunion Planner</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -34,7 +36,7 @@
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript">//from materialize
         $(document).ready(function() {
             $('.collapsible').collapsible();
             $('select').material_select();
@@ -43,8 +45,14 @@
     </script>
  <div class="above-footer">
  </div>
-   <!-- button code from W3 Schools -->
-      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+ 
+ <!--<i class="material-icons right"></i>-->
+   <!-- button code from materialize 
+         <div class="fixed-action-btn">
+  <a class="btn-floating btn-small">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+  </div>-->
    <!--footer from materialize-->
      <footer class="page-footer">
           <div class="container">
@@ -52,10 +60,10 @@
               <div class="col l6 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://niagarafalls.ca/">Niagara Falls Tourism</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.niagarafallstourism.com/sleep/campgrounds-cottages/stay-n-play/">Stay N Play Cottage Lodge</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.niagarafallstourism.com/sleep/campgrounds-cottages/pine-tree-house/">Pine Tree House</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.niagarafallscottagerentals.com/?utm_source=NFT&utm_medium=Member%20Profile&utm_campaign=NFT">Craig House</a></li>
                 </ul>
               </div>
             </div>
@@ -63,12 +71,11 @@
           <div class="footer-copyright">
             <div class="container">
            
-            <a class="grey-text text-lighten-4 right" href="#!">For educational purposes only</a>
+            <a class="grey-text text-lighten-4 right" href="#!">© 2020 For educational purposes only</a>
             </div>
           </div>
         </footer>
- <script src="static/js/scroll.js"></script>
-     <script type="text/javascript">
+     <script type="text/javascript">//datepicker from materialize
         $('.datepicker').pickadate({
             selectMonths: true, // Creates a dropdown to control month
             selectYears: 15, // Creates a dropdown of 15 years to control year,
@@ -78,6 +85,7 @@
             closeOnSelect: false // Close upon selecting a date,
         });
     </script>
+     <script src="static/js/scroll.js"></script>
 </body>
 </html>
 
