@@ -5,19 +5,19 @@
     <form action="{{ url_for('update_expense', expense_id=expense._id) }}" method="POST" class="col s12">
           <div class="row">
             <div class="input-field col s12">
-                <textarea name="exp_name" id="exp_name" type="text" class="materialize-textarea" value="{{ expense.exp_name }}"></textarea>
+                <input id="exp_name" name="exp_name" type="text" class="materialize-textarea" value="{{ expense.exp_name }}">
                 <label for="expenses">Expense Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-            <input id="due_date" name="due_date" type="text" class="datepicker">
+            <input id="date" name="date" type="text" class="datepicker">
                 <label for="icon_prefix">Date</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea name="amount" id="amount" type="number" class="materialize-textarea" value="{{ expense.amount }}"></textarea>
+                <textarea name="amount" id="amount" type="number" class="materialize-textarea"></textarea>
                 <label for="expenses">Amount</label>
             </div>
         </div>

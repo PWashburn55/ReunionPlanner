@@ -154,9 +154,9 @@ def add_expense():
 @app.route('/insert_expense', methods=['POST'])  # from task mgr to add expense
 def insert_expense():
     expenses = mongo.db.expenses
-    the_expense = mongo.db.expenses.find()
+    #the_expense = mongo.db.expenses.find()
     expenses.insert_one(request.form.to_dict())
-    return redirect(url_for('get_expenses'), expense=the_expense)
+    return redirect(url_for('get_expenses'))
 
 
 #@app.route('/edit_expense/<expense_id>')
@@ -184,7 +184,7 @@ def update_expense(expense_id):
                         'person': request.form.get('person'),
                         'notes': request.form.get('notes')
                     })
-    return redirect(url_for('get_expenses'), expense=the_expense)
+    return redirect(url_for('get_expenses'))
 
 
 @app.route('/delete_expense/<expense_id>')  # from task mgr to delete expense
@@ -193,9 +193,9 @@ def delete_expense(expense_id):
     return redirect(url_for('get_expenses'))
 
 
-def add_all_expenses(list_amounts):
-    total = sum(list_amounts)
-    return total
+#def add_all_expenses(list_amounts):
+   # total = sum(list_amounts)
+    # return total
 
 
 if __name__ == '__main__':

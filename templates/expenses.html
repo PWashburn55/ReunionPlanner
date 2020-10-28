@@ -12,6 +12,7 @@
   </div>
 </div>
     <ul>
+        <!--code from stack overflow-->
         {% set expenses_sum = [0] %}
         {% for expense in expenses %}
             {% set _ = expenses_sum.append(expenses_sum.pop() + expense.amount|float) %}
@@ -77,24 +78,11 @@
 </div>
 </div>
 </div>
-<div class="row">
+<div class="row exp_sum">
 <div class="col s4 m4">
 </div>
 <div class="col s8 m8">
-<h5>Total Expenses = {{ expenses_sum[0] }}</h5>
-     <!--<h4>Total Expenses = {{ expenses|sum(attribute='amount') }}</h4>-->
-     <!--<h4>Total Expenses = {{ total }}</h4>
-     {% set total = [0] %}
-     {% for amt in amount -%}
-     {% if amount.append(total.pop() + amt["total"]) -%}{% endif %}
-     {% endfor %}
-     {{ total }}-->
-     <!--{% set total = [] %}
-     {% for amt in amount -%}
-     {% if total.append(expense.amount) -%}{% endif %}
-     {% endfor %}
-     {{ ("{0}").format(total | sum)}}
-     {% set total = [0] %}-->
+<h5>Total Expenses = ${{'%0.2f' |format(expenses_sum[0]) }}</h5><!--from stack overflow-->
 </div>
 </div>
 {% endblock %}

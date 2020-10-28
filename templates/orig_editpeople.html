@@ -1,0 +1,67 @@
+{% extends 'base.html'%} {% block content %}
+
+<h3>Update {{ person.name }}</h3>
+<div class="row">
+    <form action="{{ url_for('update_person', person_id=person._id) }}" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="name" name="name" type="text" class="materialize-textarea" value="{{ person.name }}">
+                <label for="icon_prefix">Name</label>
+            </div>
+        </div>
+         <div class="row">
+             <div class="switch">
+                <label>
+                <input id="is_coming" name="is_coming" type="checkbox" value="{{ person.is_coming }}">
+                <span class="lever"></span>
+                    Is Coming
+                </label>
+            </div>
+         </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <!--<i class="material-icons prefix">schedule</i>-->
+                <input id="time_zone" name="time_zone" class="materialize-textarea" value="{{ person.time_zone }}">
+                <label for="icon_schedule">Time Zone</label>
+            </div>
+        </div>
+        <!---<div class="row">
+            <div class="checkbox">
+                <label>
+                    {% if person.is_coming %}
+                        <input id="is_coming" name="is_coming" type="checkbox" checked="checked"/>
+                    </label>
+                    <label>
+                    {% else %}
+                        <input id="is_coming" name="is_coming" type="checkbox"/>
+                    {% endif %}
+                  <span class="checkbox"></span>
+                  Is Coming?
+                </label>
+            </div>
+        </div>--->
+         <div class="row">
+            <div class="input-field col s12">
+                <!--<i class="material-icons prefix">hotel</i>-->
+                <input id="accommodations" name="accommodations" class="materialize-textarea" value="{{ person.accommodations }}">
+                <label for="icon_hotel">Accommodations</label>
+            </div>
+        </div>
+         <div class="row">
+            <div class="input-field col s12">
+                <!--<i class="material-icons prefix">restaurant</i>-->
+                <input id="diet" name="diet" class="materialize-textarea" value="{{ person.diet }}">
+                <label for="icon_restaurant">Dietary Restrictions</label>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light blue" type="submit" name="action">Edit Person
+                <i class="material-icons right"></i>
+             </button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+{% endblock %}
