@@ -12,7 +12,10 @@
   </div>
 </div>
     <ul>
+        {% set expenses_sum = [0] %}
         {% for expense in expenses %}
+            {% set _ = expenses_sum.append(expenses_sum.pop() + expense.amount|float) %}
+   
         <li>
             <div class="row">
             <div class="col s6 m6">
@@ -20,9 +23,9 @@
             </div>
             <div class="col s6 m6">
             <i class="material-icons right"></i>
-            <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a> 
+            <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn blue" style="text-align:center;">Edit</a> 
             <i class="material-icons right"></i> 
-            <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn btn_small">Del</a> 
+            <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn" style="text-align:center;">Del</a> 
             <i class="material-icons right"></i>  
             </div>
             </div>
@@ -69,7 +72,8 @@
 <div class col s11 m11>
 </div>
 <div class col s1 m1>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">To Top</button>
+   <!-- <a id="top-button"></a>
+   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
 </div>
 </div>
 </div>
@@ -77,7 +81,20 @@
 <div class="col s4 m4">
 </div>
 <div class="col s8 m8">
-     <span>Total Expenses = {{ total }}</span>
+<h5>Total Expenses = {{ expenses_sum[0] }}</h5>
+     <!--<h4>Total Expenses = {{ expenses|sum(attribute='amount') }}</h4>-->
+     <!--<h4>Total Expenses = {{ total }}</h4>
+     {% set total = [0] %}
+     {% for amt in amount -%}
+     {% if amount.append(total.pop() + amt["total"]) -%}{% endif %}
+     {% endfor %}
+     {{ total }}-->
+     <!--{% set total = [] %}
+     {% for amt in amount -%}
+     {% if total.append(expense.amount) -%}{% endif %}
+     {% endfor %}
+     {{ ("{0}").format(total | sum)}}
+     {% set total = [0] %}-->
 </div>
 </div>
 {% endblock %}

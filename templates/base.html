@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
-<title>Reunion Planner</title>
+    <title>Reunion Planner</title>
 </head>
 
 <body>
     <header>
           <nav class="nav"><!--from task manager mini-project & materialize -->
             <div class="nav-wrapper">
-                <a href="home.html" class="brand-logo"> Reunion Planner</a>
+                <a href="index.html" class="brand-logo"> Reunion Planner</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="{{url_for('get_home')}}">Home</a></li>
@@ -32,6 +34,10 @@
      </header>
     <div class="container">
         {% block content %} {% endblock %}
+    </div>
+    <div>
+    <!--<a id="top-button"></a>-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     </div>
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -68,10 +74,23 @@
               </div>
             </div>
           </div>
+         <div class="row">
+         <div class="social_icon align-self-center list-inline col l6 s12">
+                    <div class="text-center">
+                        <ul>
+                            <li><a href="https://www.facebook.com/" target="_blank"><i
+                                        class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i
+                                        class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i
+                                        class="fa fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
           <div class="footer-copyright">
             <div class="container">
-           
-            <a class="grey-text text-lighten-4 right" href="#!">© 2020 For educational purposes only</a>
+            <a class="grey-text text-lighten-4 right" href="#!">2020 For educational purposes only</a>
             </div>
           </div>
         </footer>
@@ -85,7 +104,11 @@
             closeOnSelect: false // Close upon selecting a date,
         });
     </script>
+
+<!--<a href="#top-btn" class="to-top" title="Back to top"><i class="fas fa-chevron-up"></i></a>-->
+
      <script src="static/js/scroll.js"></script>
+ 
 </body>
 </html>
 

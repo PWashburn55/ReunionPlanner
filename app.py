@@ -57,7 +57,7 @@ def update_person(person_id):
                     'time_zone': request.form.get('time_zone'),
                     'is_coming': request.form.get('is_coming'),
                     'accommodations': request.form.get('accommodations'),
-                    'diet': request.form.get('dietary_restrictions')
+                    'diet': request.form.get('diet')
                   })
     return redirect(url_for('get_people'))
 
@@ -156,7 +156,7 @@ def insert_expense():
     expenses = mongo.db.expenses
     the_expense = mongo.db.expenses.find()
     expenses.insert_one(request.form.to_dict())
-    return redirect(url_for('get_expenses'))
+    return redirect(url_for('get_expenses'), expense=the_expense)
 
 
 #@app.route('/edit_expense/<expense_id>')
