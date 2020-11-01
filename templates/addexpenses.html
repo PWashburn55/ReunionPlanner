@@ -35,7 +35,7 @@
         </div>
 
         <div class="row">
-            <button class="btn waves-effect waves-light green" type="submit" name="action">Add Expense
+            <button class="btn waves-effect waves-light addbtn" type="submit" name="action">Add Expense
                 <i class="material-icons right"></i>
              </button>
         </div>
@@ -47,7 +47,8 @@
     $(document).ready(function() {
 
         date = Date.parse('{{expense.date}}');
-        $('#date').pickadate('picker').set('select', date, {format: mm/dd/yy}).trigger('change')
+        $('#date').pickadate('picker').set('select', date, {format: 'mm/dd/yy'}).trigger('change')
+        
     });
 
 </script>

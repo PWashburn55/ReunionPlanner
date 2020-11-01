@@ -17,7 +17,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea name="amount" id="amount" type="number" class="materialize-textarea"></textarea>
+                <textarea name="amount" id="amount" type="number" class="materialize-textarea" value="{{ expense.amount }}"></textarea>
                 <label for="expenses">Amount</label>
             </div>
         </div>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="row">
-            <button class="btn waves-effect waves-light blue" type="submit" name="action">Edit Expense
+            <button class="btn waves-effect waves-light editbtn" type="submit" name="action">Edit Expense
                 <i class="material-icons right"></i>
              </button>
         </div>

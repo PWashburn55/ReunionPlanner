@@ -39,7 +39,7 @@
     <!--<a id="top-button"></a>-->
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
     </div>
-  
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript">//from materialize
@@ -103,6 +103,7 @@
             close: 'Ok',
             closeOnSelect: false // Close upon selecting a date,
         });
+        $('.datepicker').on('mousedown',function(event){ event.preventDefault(); })//from stack overflow
     </script>
 
 <!--<a href="#top-btn" class="to-top" title="Back to top"><i class="fas fa-chevron-up"></i></a>-->

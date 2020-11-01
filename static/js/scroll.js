@@ -17,35 +17,3 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-/*
-var topbtn = $('#top-button');
-
-$(window).scroll(function() {
-  if ($(window).scrollTop() > 300) {
-    topbtn.addClass('show');
-  } else {
-    topbtn.removeClass('show');
-  }
-});
-
-topbtn.on('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
-});
-
-
-$(document).ready(function () {
-    $("a[href='#top-btn']").click(function () {
-        $("html, body").animate({ scrollTop: 0 }, 700, 'swing',);
-        return false;
-    });
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
-            $('.to-top').fadeIn();
-        } else {
-            $('.to-top').fadeOut();
-        }
-    });
-});
-*/

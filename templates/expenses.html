@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col s6 m6">
         <i class="material-icons right"></i>
-         <a href="{{url_for('add_expense')}}" class="waves-effect waves-light btn green">Add New Expense</a>
+         <a href="{{url_for('add_expense')}}" class="waves-effect waves-light btn addbtn">Add New Expense</a>
   </div>
 </div>
     <ul>
@@ -24,9 +24,9 @@
             </div>
             <div class="col s6 m6">
             <i class="material-icons right"></i>
-            <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn blue" style="text-align:center;">Edit</a> 
+            <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn editbtn" style="text-align:center;">Edit</a> 
             <i class="material-icons right"></i> 
-            <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn" style="text-align:center;">Del</a> 
+            <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn delbtn" style="text-align:center;">Del</a> 
             <i class="material-icons right"></i>  
             </div>
             </div>
@@ -82,7 +82,7 @@
 <div class="col s4 m4">
 </div>
 <div class="col s8 m8">
-<h5>Total Expenses = ${{'%0.2f' |format(expenses_sum[0]) }}</h5><!--from stack overflow-->
+<h5>Total Expenses = ${{'%0.2f' |format(expenses_sum[0]) }}</h5><!--from stack overflow & jinja docs-->
 </div>
 </div>
 {% endblock %}

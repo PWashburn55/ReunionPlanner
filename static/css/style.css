@@ -121,14 +121,59 @@
     text-align: center;
 }*/
 
+.input-field {
+    color: dimgray !important;
+}
+
+ .input-field input[type=text]:focus + label {
+     color: dimgray;
+     }
+
+.input-field input[type=text]:focus {
+     border-bottom: 1px solid dimgray;
+     box-shadow: 0 1px 0 0 dimgray;
+   }
+
 .btn {
     float: none;
     text-align: center;
-     margin-right: 5px; 
+    margin-right: 5px; 
     margin-left: 5px;
     /*padding: 0 0.5em;*/
     padding-right: 2px;
     padding-left: 2px;
+}
+
+.editbtn {
+    background-color: gray !important;
+    text-align: center;
+}
+
+.addbtn {
+    background-color: silver !important;
+    text-align: center;
+}
+
+.delbtn {
+    background-color: dimgray !important;
+    text-align: center;
+}
+
+.lever {
+    color: dimgray !important;
+    background-color: dimgray !important;
+}
+
+.switch-checked-lever-bg {
+    background-color: dimgray !important;
+}
+
+.lever: checked {
+    background-color: dimgray;
+}
+
+.datepicker {
+    color: silver !important;
 }
 
 #myBtn {
@@ -150,6 +195,8 @@
 #myBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
 }
+
+
 
 /*back to top button from codepen
 .to-top{
