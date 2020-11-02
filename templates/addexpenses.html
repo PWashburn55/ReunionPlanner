@@ -3,7 +3,7 @@
 <h3>Add Expense</h3>
 <div class="row">
     <form action="{{ url_for('insert_expense') }}" method="POST" class="col s12">
-             <div class="row">
+            <div class="row">
             <div class="input-field col s12">
                 <input id="exp_name" name="exp_name" type="text" class="materialize-textarea">
                 <label for="icon_prefix">Expense Name</label>
@@ -17,7 +17,8 @@
             </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea name="amount" id="amount" type="number" class="materialize-textarea"></textarea>
+                <input id="amount" name="amount" type="number" class="input-field materialize-textarea">
+               <!--- <textarea name="amount" id="amount" type="number" class="materialize-textarea"></textarea>-->
                 <label for="expenses">Amount</label>
             </div>
         </div>
@@ -35,7 +36,7 @@
         </div>
 
         <div class="row">
-            <button class="btn waves-effect waves-light addbtn" type="submit" name="action">Add Expense
+            <button class="btn waves-effect waves-light blue" type="submit" name="action">Add Expense
                 <i class="material-icons right"></i>
              </button>
         </div>

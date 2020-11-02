@@ -107,7 +107,33 @@
     min-height: 50px;
 }
 
-/*buttons*/
+/*buttons from materialize*/
+/*.btn_small {
+    height: 24px;
+    width: 60px;
+    line-height: 24px;
+    margin-right: 5px; 
+    margin-left: 5px;
+    /*padding: 0 0.5em;*/
+    /*padding-right: 2px;
+    padding-left: 2px;
+    /*float: none;
+    text-align: center;
+}*/
+
+.input-field {
+    color: dimgray !important;
+}
+
+ .input-field input[type=text]:focus + label {
+     color: dimgray;
+     }
+
+.input-field input[type=text]:focus {
+     border-bottom: 1px solid dimgray;
+     box-shadow: 0 1px 0 0 dimgray;
+   }
+
 .btn {
     float: none;
     text-align: center;
@@ -118,7 +144,79 @@
     padding-left: 2px;
 }
 
-/*scroll to top button*/
+.editbtn {
+    background-color: gray !important;
+    text-align: center;
+}
+
+.addbtn {
+    background-color: silver !important;
+    text-align: center;
+}
+
+.delbtn {
+    background-color: dimgray !important;
+    text-align: center;
+}
+
+.lever {
+    color: dimgray !important;
+    background-color: dimgray !important;
+}
+
+.switch-checked-lever-bg {
+    background-color: dimgray !important;
+}
+
+#is_coming {
+    background-color: dimgray;
+    color: dimgray;
+}
+
+.materialize-textarea {
+    color: dimgray;
+}
+
+.lever-checked {
+    background-color: dimgray;
+}
+
+.picker__date-display {
+  background-color: silvergray;
+}
+.picker__weekday-display {
+  background-color: silvergray;
+}
+.datepicker__day--selected {
+  background-color: silvergray;
+}
+
+.datepicker--focused {
+    background-color: silvergray;
+}
+
+.datepicker__day--selected {
+    background-color: silvergray;
+}
+
+.datepicker__day--selected:hover {
+    background-color: silvergray;
+}
+
+.datepicker__box{
+    background-color: silvergray;
+}
+
+ /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: dimgray !important;
+}
+/* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid dimgray !important;
+     box-shadow: 0 1px 0 0 dimgray !important;
+   }
+
 #myBtn {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
@@ -139,6 +237,66 @@
   background-color: #555; /* Add a dark-grey background on hover */
 }
 
+
+
+/*back to top button from codepen
+.to-top{
+    z-index: 100;
+	position:fixed;
+	bottom:40px;
+	right:40px;
+	color: grey;
+    font-size: 2em;
+    display: none;
+}
+
+.to-top{
+    margin-top:22px;
+    transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+}
+
+
+#top-btn {
+  display: inline-block;
+  background-color: grey;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#top-btn::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#top-btn:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#top-btn:active {
+  background-color: #555;
+}
+#top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*footer with code from W3 schools*/
 .exp_sum {
     padding-top: 30px;
 }
@@ -200,3 +358,8 @@
     background: lightblue !important;
     color: #fff;
 }
+
+/*.footer-copyright {
+    background-color: lightblue !important;
+}*/
+
