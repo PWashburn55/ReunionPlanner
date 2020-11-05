@@ -2,57 +2,57 @@
 <!--code from task manager mini-project-->
 <h3>Edit/Add Schedule Item</h3>
 <div class="row">
-    <form action="{{ url_for('update_item', item_id=item._id) }}" method="POST"  class="col s12">
-          <div class="row">
-            <div class="row">
-                <div class="input-field col s12">
-                    <!--<i class="material-icons prefix">poll</i>-->
-                    <select id="day" name="day">
-                  <option value="" disabled selected>Select Day</option>
-                  {% for day in schedule %}
-                      <option value="{{day.day}}">{{day.day}}</option>
-                  {% endfor %}
-                </select>
-                    <label>Day</label>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="morning" name="morning" type="text" class="materialize-textarea" value="{{ item.morning }}">
-                <label for="schedule">Morning</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="afternoon" name="afternoon" type="text" class="materialize-textarea" value="{{ item.afternoon }}">
-                <label for="icon_prefix">Afternoon</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="dinner" name="dinner" type="text" class="materialize-textarea" value="{{ item.dinner }}">
-                <label for="icon_prefix">Dinner</label>
-            </div>
-        </div>
+   <form action="{{ url_for('update_item', item_id=item._id) }}" method="POST"  class="col s12">
+      <div class="row">
          <div class="row">
             <div class="input-field col s12">
-                <input id="dinner_name" name="dinner_name" type="text" class="materialize-textarea" value="{{ item.dinner_name }}">
-                <label for="icon_prefix">Who Is Cooking</label>
+               <!--<i class="material-icons prefix">poll</i>-->
+               <select id="day" name="day">
+                  <option value="" disabled selected>Select Day</option>
+                  {% for day in schedule %}
+                  <option value="{{day.day}}">{{day.day}}</option>
+                  {% endfor %}
+               </select>
+               <label>Day</label>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="evening" name="evening" type="text" class="materialize-textarea" value="{{ item.evening }}">
-                <label for="icon_prefix">Evening</label>
-            </div>
-        </div>
-        <div class="row">
-            <button class="btn waves-effect waves-light editbtn" type="submit" name="action">Edit/Add Schedule Item
-                <i class="material-icons right"></i>
-             </button>
-        </div>
-        </form>
-    </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="morning" name="morning" type="text" class="materialize-textarea" value="{{ item.morning }}">
+            <label for="schedule">Morning</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="afternoon" name="afternoon" type="text" class="materialize-textarea" value="{{ item.afternoon }}">
+            <label for="icon_prefix">Afternoon</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="dinner" name="dinner" type="text" class="materialize-textarea" value="{{ item.dinner }}">
+            <label for="icon_prefix">Dinner</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="dinner_name" name="dinner_name" type="text" class="materialize-textarea" value="{{ item.dinner_name }}">
+            <label for="icon_prefix">Who Is Cooking</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="evening" name="evening" type="text" class="materialize-textarea" value="{{ item.evening }}">
+            <label for="icon_prefix">Evening</label>
+         </div>
+      </div>
+      <div class="row">
+         <button class="btn waves-effect waves-light editbtn" type="submit" name="action">Edit/Add Schedule Item
+         <i class="material-icons right"></i>
+         </button>
+      </div>
+   </form>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {% endblock %}

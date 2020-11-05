@@ -1,20 +1,17 @@
 {% extends 'base.html' %} {% block content %}
-
-    <section>
-    <h5>Destination: Niagara Falls</h5>
-    <div class="niagara-falls"> </div>
-    </section>
-    <section>
-    <h5>Map of Niagara Falls, Ontario, Canada</h5>
-    <div id="map"></div>
-    <div id="below-map">
-    </div>
-    </section>
-
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJN2X7IOq0MbWDklcZPQYIrWgfNd19qd4&callback=initMap"></script>
-    <script src="static/js/map.js"></script>
-
-    {% endblock %}
+<section>
+   <h5>Destination: Niagara Falls</h5>
+   <div class="niagara-falls"> </div>
+</section>
+<section>
+   <h5>Map of Niagara Falls, Ontario, Canada</h5>
+   <div id="map"></div>
+   <div id="below-map">
+   </div>
+</section>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJN2X7IOq0MbWDklcZPQYIrWgfNd19qd4&callback=initMap"></script>
+<script src="static/js/map.js"></script>
+{% endblock %}
 
     

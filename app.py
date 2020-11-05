@@ -75,25 +75,25 @@ def get_schedule():
                            schedule=mongo.db.schedule.find(), item=the_item)
 
 
-@app.route('/add_item')
-def add_item():
-    the_item = mongo.db.schedule.find()
-    return render_template('addschedule.html',
-                           schedule=mongo.db.schedule.find(), item=the_item)
+#@app.route('/add_item')
+#def add_item():
+   # the_item = mongo.db.schedule.find()
+    #return render_template('addschedule.html',
+                         #  schedule=mongo.db.schedule.find(), item=the_item)
 
 
-@app.route('/insert_item', methods=['POST'])
-def insert_item():
-    schedule = mongo.db.schedule
-    schedule.insert_one(request.form.to_dict())
-    return redirect(url_for('get_schedule'))
+#@app.route('/insert_item', methods=['POST'])
+#def insert_item():
+#    schedule = mongo.db.schedule
+#    schedule.insert_one(request.form.to_dict())
+#    return redirect(url_for('get_schedule'))
 
 
 @app.route('/edit_item/<item_id>')
 def edit_item(item_id):
     the_item = mongo.db.schedule.find_one({"_id": ObjectId(item_id)})
     return render_template('editschedule.html',
-                           schedule=mongo.db.schedule.find(), item=the_item)
+                        schedule=mongo.db.schedule.find(), item=the_item)
 
 
 @app.route('/update_item/<item_id>', methods=["POST"])
@@ -111,16 +111,6 @@ def update_item(item_id):
     return redirect(url_for('get_schedule'))
 
 
-#@app.route('/update_item.morning/<item.morning_id>', methods=["POST"])
-#def update_item.morning(item.morning_id):
-    #schedule = mongo.db.schedule
-    #schedule.update({'_id': ObjectId(item.morning_id)},
-                  #  {
-                  #      'morning': request.form.get('morning'),
-                  #  })
-   # return redirect(url_for('get_schedule'))
-
-
 #@app.route('/delete_item/<item_id>')
 #def delete_item(item_id):
     #mongo.db.schedule.remove({'_id': ObjectId(item_id)})
@@ -133,12 +123,6 @@ def get_expenses():
     expenses = mongo.db.expenses.find()
     #the_expense = mongo.db.expenses.find()
     total = 0
-
-    
-    # the_expense_e = mongo.db.expenses.find({ }, { amounts: 1 })
-    # print("EXPENSES")
-    # print(the_expense_e)
-    # total = add_all_expenses(the_expense_e)
     return render_template("expenses.html", expenses=expenses,
                            total=total)
 
@@ -191,11 +175,6 @@ def update_expense(expense_id):
 def delete_expense(expense_id):
     mongo.db.expenses.remove({'_id': ObjectId(expense_id)})
     return redirect(url_for('get_expenses'))
-
-
-#def add_all_expenses(list_amounts):
-   # total = sum(list_amounts)
-    # return total
 
 
 if __name__ == '__main__':

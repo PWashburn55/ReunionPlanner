@@ -1,115 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <title>Reunion Planner</title>
-</head>
-
-<body>
-    <header>
-          <nav class="nav"><!--from task manager mini-project & materialize -->
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      <title>Reunion Planner</title>
+   </head>
+   <body>
+      <header>
+         <nav class="nav">
+            <!--from task manager mini-project & materialize -->
             <div class="nav-wrapper">
-                <a href="index.html" class="brand-logo"><h1> Reunion Planner</h1></a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('get_home')}}">Home</a></li>
-                    <li><a href="{{url_for('get_people')}}">People</a></li>
-                    <li><a href="{{url_for('get_schedule')}}">Schedule</a></li>
-                    <li><a href="{{url_for('get_expenses')}}">Expenses</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="{{url_for('get_home')}}">Home</a></li>
-                    <li><a href="{{url_for('get_people')}}">People</a></li>
-                    <li><a href="{{url_for('get_schedule')}}">Schedule</a></li>
-                    <li><a href="{{url_for('get_expenses')}}">Expenses</a></li>
-                </ul>
+               <a href="index.html" class="brand-logo">
+                  <h1> Reunion Planner</h1>
+               </a>
+               <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+               <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a href="{{url_for('get_home')}}">Home</a></li>
+                  <li><a href="{{url_for('get_people')}}">People</a></li>
+                  <li><a href="{{url_for('get_schedule')}}">Schedule</a></li>
+                  <li><a href="{{url_for('get_expenses')}}">Expenses</a></li>
+               </ul>
+               <ul class="side-nav" id="mobile-demo">
+                  <li><a href="{{url_for('get_home')}}">Home</a></li>
+                  <li><a href="{{url_for('get_people')}}">People</a></li>
+                  <li><a href="{{url_for('get_schedule')}}">Schedule</a></li>
+                  <li><a href="{{url_for('get_expenses')}}">Expenses</a></li>
+               </ul>
             </div>
-        </nav>
-     </header>
-    <div class="container">
-        {% block content %} {% endblock %}
-    </div>
-    <div>
-    <!--<a id="top-button"></a>-->
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
-    </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">//from materialize
-        $(document).ready(function() {
-            $('.collapsible').collapsible();
-            $('select').material_select();
-            $(".button-collapse").sideNav();
-        });
-    </script>
- <div class="above-footer">
- </div>
- 
- <!--<i class="material-icons right"></i>-->
-   <!-- button code from materialize 
-         <div class="fixed-action-btn">
-  <a class="btn-floating btn-small">
-    <i class="large material-icons">mode_edit</i>
-  </a>
-  </div>-->
-   <!--footer from materialize-->
-     <footer class="page-footer">
-          <div class="container">
+         </nav>
+      </header>
+      <div class="container">
+         {% block content %} {% endblock %}
+      </div>
+      <div>
+         <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script type="text/javascript">//from materialize
+         $(document).ready(function() {
+             $('.collapsible').collapsible();
+             $('select').material_select();
+             $(".button-collapse").sideNav();
+         });
+      </script>
+      <div class="above-footer">
+      </div>
+      <!--footer from materialize-->
+      <footer class="page-footer">
+         <div class="container">
             <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="https://niagarafalls.ca/">Niagara Falls Tourism</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://www.niagarafallstourism.com/sleep/campgrounds-cottages/stay-n-play/">Stay N Play Cottage Lodge</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://www.niagarafallstourism.com/sleep/campgrounds-cottages/pine-tree-house/">Pine Tree House</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://www.niagarafallscottagerentals.com/?utm_source=NFT&utm_medium=Member%20Profile&utm_campaign=NFT">Craig House</a></li>
-                </ul>
-              </div>
+               <div class="col l6 s12">
+                  <h5 class="white-text">Links</h5>
+                  <ul>
+                     <li><a class="grey-text text-lighten-3" href="https://niagarafalls.ca/">Niagara Falls Tourism</a></li>
+                     <li><a class="grey-text text-lighten-3" href="https://www.niagarafallstourism.com/sleep/campgrounds-cottages/stay-n-play/">Stay N Play Cottage Lodge</a></li>
+                     <li><a class="grey-text text-lighten-3" href="https://www.niagarafallstourism.com/sleep/campgrounds-cottages/pine-tree-house/">Pine Tree House</a></li>
+                     <li><a class="grey-text text-lighten-3" href="https://www.niagarafallscottagerentals.com/?utm_source=NFT&utm_medium=Member%20Profile&utm_campaign=NFT">Craig House</a></li>
+                  </ul>
+               </div>
             </div>
-          </div>
+         </div>
          <div class="row">
-         <div class="social_icon align-self-center list-inline col l12 s12">
-                    <div class="text-center">
-                        <ul>
-                            <li><a href="https://www.facebook.com/" target="_blank"><i
-                                        class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i
-                                        class="fa fa-instagram"></i></a></li>
-                            <li><a href="https://twitter.com/" target="_blank"><i
-                                        class="fa fa-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-        </div>
-          <div class="footer-copyright">
-            <div class="container">
-            <a class="grey-text text-lighten-4 right" href="#!">2020 For educational purposes only</a>
+            <div class="social_icon align-self-center list-inline col l12 s12">
+               <div class="text-center">
+                  <ul>
+                     <li><a href="https://www.facebook.com/" target="_blank"><i
+                        class="fa fa-facebook"></i></a></li>
+                     <li><a href="https://www.instagram.com/" target="_blank"><i
+                        class="fa fa-instagram"></i></a></li>
+                     <li><a href="https://twitter.com/" target="_blank"><i
+                        class="fa fa-twitter"></i></a></li>
+                  </ul>
+               </div>
             </div>
-          </div>
-        </footer>
-     <script type="text/javascript">//datepicker from materialize
-        $('.datepicker').pickadate({
-            selectMonths: true, // Creates a dropdown to control month
-            selectYears: 15, // Creates a dropdown of 15 years to control year,
-            today: 'Today',
-            clear: 'Clear',
-            close: 'Ok',
-            closeOnSelect: false // Close upon selecting a date,
-        });
-        $('.datepicker').on('mousedown',function(event){ event.preventDefault(); })//from stack overflow
-    </script>
-
-<!--<a href="#top-btn" class="to-top" title="Back to top"><i class="fas fa-chevron-up"></i></a>-->
-
-     <script src="static/js/scroll.js"></script>
- 
-</body>
+         </div>
+         <div class="footer-copyright">
+            <div class="container">
+               <a class="grey-text text-lighten-4 right" href="#!">2020 For educational purposes only</a>
+            </div>
+         </div>
+      </footer>
+      <script type="text/javascript">//datepicker from materialize
+         $('.datepicker').pickadate({
+             selectMonths: true, // Creates a dropdown to control month
+             selectYears: 15, // Creates a dropdown of 15 years to control year
+             today: 'Today',
+             clear: 'Clear',
+             close: 'Ok',
+             closeOnSelect: false // Close upon selecting a date
+         });
+         $('.datepicker').on('mousedown',function(event){ event.preventDefault(); })//from stack overflow to keep calendar displayed
+      </script>
+      <script src="static/js/scroll.js"></script>
+   </body>
 </html>
-

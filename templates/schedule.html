@@ -1,84 +1,75 @@
 {% extends 'base.html'%} {% block content %}
 <div class="container">
-<h3>Schedule</h3>
-<div class="row">
-</div>
-    <ul>
-        {% for item in schedule %}
-        <li>
-            <div class="row">
+   <h3>Schedule</h3>
+   <div class="row"></div>
+   <ul>
+      {% for item in schedule %}
+      <li>
+         <div class="row">
             <h5>  <span>{{item.day}}</span></h5>
-            </div>
-            
-            <div class="row">
+         </div>
+         <div class="row">
             <div class="col s4 m4">
-            <span>Morning</span>
-            </div>
-            <div class="col s4 m4">
-            {{item.morning}}
+               <span>Morning</span>
             </div>
             <div class="col s4 m4">
-            <i class="material-icons right"></i>
-            <a href="{{url_for('edit_item', item_id=item._id)}}" class="waves-effect waves-light btn editbtn">Edit/Add</a> 
-            </div>
-            </div>
-            
-            <div class="row">
-            <div class="col s4 m4">
-            <span>Afternoon</span>
+               {{item.morning}}
             </div>
             <div class="col s4 m4">
-            {{item.afternoon}}
+               <i class="material-icons right"></i>
+               <a href="{{url_for('edit_item', item_id=item._id)}}" class="waves-effect waves-light btn editbtn">Edit/Add</a> 
+            </div>
+         </div>
+         <div class="row">
+            <div class="col s4 m4">
+               <span>Afternoon</span>
             </div>
             <div class="col s4 m4">
-            <i class="material-icons right"></i>
-            <a href="{{url_for('edit_item', item_id=item._id)}}" class="waves-effect waves-light btn editbtn">Edit/Add</a> 
-            </div>
-            </div>
-            
-            <div class="row">
-            <div class="col s4 m4">
-            <span>Dinner</span>
+               {{item.afternoon}}
             </div>
             <div class="col s4 m4">
-            {{item.dinner}}
+               <i class="material-icons right"></i>
+               <a href="{{url_for('edit_item', item_id=item._id)}}" class="waves-effect waves-light btn editbtn">Edit/Add</a> 
+            </div>
+         </div>
+         <div class="row">
+            <div class="col s4 m4">
+               <span>Dinner</span>
+            </div>
+            <div class="col s4 m4">
+               {{item.dinner}}
             </div>
             <div class="col s4">
-            <i class="material-icons right"></i>
-            <a href="{{url_for('edit_item', item_id=item._id)}}" class="waves-effect waves-light btn editbtn">Edit/Add</a> 
+               <i class="material-icons right"></i>
+               <a href="{{url_for('edit_item', item_id=item._id)}}" class="waves-effect waves-light btn editbtn">Edit/Add</a> 
             </div>
-            </div>
-
-            <div class="row">
+         </div>
+         <div class="row">
             <div class="col s4 m4">
-            <span>Dinner Name</span>
+               <span>Dinner Name</span>
             </div>
             <div class="col s4 m4">
-            {{item.dinner_name}}
+               {{item.dinner_name}}
             </div>
             <div class="col s4">
-            <i class="material-icons right"></i>
-            <a href="{{url_for('edit_item', item_id=item._id)}}" class="waves-effect waves-light btn editbtn">Edit/Add</a> 
+               <i class="material-icons right"></i>
+               <a href="{{url_for('edit_item', item_id=item._id)}}" class="waves-effect waves-light btn editbtn">Edit/Add</a> 
             </div>
-            </div>
-            
-            <div class="row">
+         </div>
+         <div class="row">
             <div class="col s4 m4">
-            <span>Evening</span>
-            </div>
-            <div class="col s4 m4">
-            {{item.evening}}
+               <span>Evening</span>
             </div>
             <div class="col s4 m4">
-            <i class="material-icons right"></i>
-            <a href="{{url_for('edit_item', item_id=item._id)}}" class="waves-effect waves-light btn editbtn">Edit/Add</a> 
+               {{item.evening}}
             </div>
+            <div class="col s4 m4">
+               <i class="material-icons right"></i>
+               <a href="{{url_for('edit_item', item_id=item._id)}}" class="waves-effect waves-light btn editbtn">Edit/Add</a> 
             </div>
-        </li>
-       
-        <!--<a id="top-button"></a>-->
-       <!--- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
-        {% endfor %}
-    </ul>
+         </div>
+      </li>
+      {% endfor %}
+   </ul>
 </div>
 {% endblock %}

@@ -2,55 +2,53 @@
 <!--code from task manager mini-project-->
 <h3>Add Expense</h3>
 <div class="row">
-    <form action="{{ url_for('insert_expense') }}" method="POST" class="col s12">
-            <div class="row">
-            <div class="input-field col s12">
-                <input id="exp_name" name="exp_name" type="text" class="materialize-textarea">
-                <label for="icon_prefix">Expense Name</label>
-            </div>
-        </div>
-            <div class="row">
-            <div class="input-field col s12">
+   <form action="{{ url_for('insert_expense') }}" method="POST" class="col s12">
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="exp_name" name="exp_name" type="text" class="materialize-textarea">
+            <label for="icon_prefix">Expense Name</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
             <input id="date" name="date" type="text" class="datepicker">
-                <label for="icon_prefix">Date</label>
-            </div>
-            </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="amount" name="amount" type="number" class="input-field materialize-textarea">
-               <!--- <textarea name="amount" id="amount" type="number" class="materialize-textarea"></textarea>-->
-                <label for="expenses">Amount</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="person" name="person" type="text" class="materialize-textarea">
-                <label for="icon_prefix">Person</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="notes" name="notes" type="text" class="materialize-textarea">
-                <label for="icon_prefix">Notes</label>
-            </div>
-        </div>
-
-        <div class="row">
-            <button class="btn waves-effect waves-light blue" type="submit" name="action">Add Expense
-                <i class="material-icons right"></i>
-             </button>
-        </div>
-    </form>
+            <label for="icon_prefix">Date</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="amount" name="amount" type="number" class="input-field materialize-textarea">
+            <label for="expenses">Amount</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="person" name="person" type="text" class="materialize-textarea">
+            <label for="icon_prefix">Person</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="notes" name="notes" type="text" class="materialize-textarea">
+            <label for="icon_prefix">Notes</label>
+         </div>
+      </div>
+      <div class="row">
+         <button class="btn waves-effect waves-light blue" type="submit" name="action">Add Expense
+         <i class="material-icons right"></i>
+         </button>
+      </div>
+   </form>
 </div>
 <!--from materialize-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-
-        date = Date.parse('{{expense.date}}');
-        $('#date').pickadate('picker').set('select', date, {format: 'mm/dd/yy'}).trigger('change')
-        
-    });
-
+   $(document).ready(function() {
+   
+       date = Date.parse('{{expense.date}}');
+       $('#date').pickadate('picker').set('select', date, {format: 'mm/dd/yy'}).trigger('change')
+       
+   });
+   
 </script>
 {% endblock %}

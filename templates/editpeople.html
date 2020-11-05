@@ -2,46 +2,46 @@
 <!--code from task manager mini-project-->
 <h3>Update {{ person.name }}</h3>
 <div class="row">
-    <form action="{{ url_for('update_person', person_id=person._id) }}" method="POST"  class="col s12">
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="name" name="name" type="text" class="materialize-textarea" value="{{ person.name }}">
-                <label for="schedule">Name</label>
-            </div>
-        </div>
-          <div class="row">
-             <div class="switch">
-                <label>
-                <input id="is_coming" name="is_coming" type="checkbox" value="{{ person.is_coming }}">
-                <span class="lever delbtn"></span>
-                    Is Coming
-                </label>
-            </div>
+   <form action="{{ url_for('update_person', person_id=person._id) }}" method="POST"  class="col s12">
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="name" name="name" type="text" class="materialize-textarea" value="{{ person.name }}">
+            <label for="schedule">Name</label>
          </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="time_zone" name="time_zone" type="text" class="input-field" value="{{ person.time_zone }}">
-                <label for="icon_prefix">Time Zone</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="accommodations" name="accommodations" type="text" class="input-field" value="{{ person.accommodations }}">
-                <label for="icon_prefix">Accommodations</label>
-            </div>
-        </div>
-         <div class="row">
-            <div class="input-field col s12">
-                <input id="diet" name="diet" type="text" class="materialize-textarea" value="{{ person.diet }}">
-                <label for="icon_prefix">Dietary Restrictions</label>
-            </div>
-        </div>
-        <div class="row">
-            <button class="btn waves-effect waves-light editbtn" type="submit" name="action">Edit Person
-                <i class="material-icons right"></i>
-             </button>
-        </div>
-        </form>
-    </div>
+      </div>
+      <div class="row">
+         <div class="switch">
+            <label>
+            <input id="is_coming" name="is_coming" type="checkbox" value="{{ person.is_coming }}">
+            <span class="lever delbtn"></span>
+            Is Coming
+            </label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="time_zone" name="time_zone" type="text" class="input-field" value="{{ person.time_zone }}">
+            <label for="icon_prefix">Time Zone</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="accommodations" name="accommodations" type="text" class="input-field" value="{{ person.accommodations }}">
+            <label for="icon_prefix">Accommodations</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="diet" name="diet" type="text" class="materialize-textarea" value="{{ person.diet }}">
+            <label for="icon_prefix">Dietary Restrictions</label>
+         </div>
+      </div>
+      <div class="row">
+         <button class="btn waves-effect waves-light editbtn" type="submit" name="action">Edit Person
+         <i class="material-icons right"></i>
+         </button>
+      </div>
+   </form>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {% endblock %}

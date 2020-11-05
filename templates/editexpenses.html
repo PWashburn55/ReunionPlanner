@@ -2,52 +2,51 @@
 <!--code from task manager mini-project-->
 <h3>Edit Expense</h3>
 <div class="row">
-    <form action="{{ url_for('update_expense', expense_id=expense._id) }}" method="POST" class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-                <input id="exp_name" name="exp_name" type="text" class="materialize-textarea" value="{{ expense.exp_name }}">
-                <label for="expenses">Expense Name</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
+   <form action="{{ url_for('update_expense', expense_id=expense._id) }}" method="POST" class="col s12">
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="exp_name" name="exp_name" type="text" class="materialize-textarea" value="{{ expense.exp_name }}">
+            <label for="expenses">Expense Name</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
             <input id="date" name="date" type="text" class="datepicker">
-                <label for="icon_prefix">Date</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea name="amount" id="amount" type="number" class="materialize-textarea" value="{{ expense.amount }}"></textarea>
-                <label for="expenses">Amount</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="person" name="person" type="text" class="materialize-textarea" value="{{ expense.person }}">
-                <label for="icon_prefix">Person</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="notes" name="notes" type="text" class="materialize-textarea" value="{{ expense.notes }}">
-                <label for="icon_prefix">Notes</label>
-            </div>
-        </div>
-
-        <div class="row">
-            <button class="btn waves-effect waves-light editbtn" type="submit" name="action">Edit Expense
-                <i class="material-icons right"></i>
-             </button>
-        </div>
-    </form>
+            <label for="icon_prefix">Date</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="amount" name="amount" type="number" class="materialize-textarea" value="{{ expense.amount }}">
+            <label for="expenses">Amount</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="person" name="person" type="text" class="materialize-textarea" value="{{ expense.person }}">
+            <label for="icon_prefix">Person</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="input-field col s12">
+            <input id="notes" name="notes" type="text" class="materialize-textarea" value="{{ expense.notes }}">
+            <label for="icon_prefix">Notes</label>
+         </div>
+      </div>
+      <div class="row">
+         <button class="btn waves-effect waves-light editbtn" type="submit" name="action">Edit Expense
+         <i class="material-icons right"></i>
+         </button>
+      </div>
+   </form>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-
-        date = Date.parse('{{expense.date}}');
-        $('#date').pickadate('picker').set('select', date, {format: mm/dd/yy}).trigger('change')
-    });
-
+   $(document).ready(function() {
+   
+       date = Date.parse('{{expense.date}}');
+       $('#date').pickadate('picker').set('select', date, {format: mm/dd/yy}).trigger('change')
+   });
+   
 </script>
 {% endblock %}

@@ -1,88 +1,79 @@
 {% extends 'base.html'%} {% block content %}
 <div class="container">
-<div class="row">
-    <div class="col s6 m6">
-        <h3>Expenses</h3>
-    </div>
-</div>
-<div class="row">
-    <div class="col s6 m6">
-        <i class="material-icons right"></i>
+   <div class="row">
+      <div class="col s6 m6">
+         <h3>Expenses</h3>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col s6 m6">
+         <i class="material-icons right"></i>
          <a href="{{url_for('add_expense')}}" class="waves-effect waves-light btn blue">Add New Expense</a>
-  </div>
-</div>
-    <ul>
-        <!--code from stack overflow-->
-        {% set expenses_sum = [0] %}
-        {% for expense in expenses %}
-            {% set _ = expenses_sum.append(expenses_sum.pop() + expense.amount|float) %}
-   
-        <li>
-            <div class="row">
+      </div>
+   </div>
+   <ul>
+      <!--code from stack overflow-->
+      {% set expenses_sum = [0] %}
+      {% for expense in expenses %}
+      {% set _ = expenses_sum.append(expenses_sum.pop() + expense.amount|float) %}  
+      <li>
+         <div class="row">
             <div class="col s6 m6">
-            <h5>  <span>{{expense.exp_name}}</span></h5>
-            </div>
-            <div class="col s6 m6">
-            <i class="material-icons right"></i>
-            <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn" style="text-align:center;">Edit</a> 
-            <i class="material-icons right"></i> 
-            <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn green" style="text-align:center;">Del</a> 
-            <i class="material-icons right"></i>  
-            </div>
-            </div>
-            
-            <div class="row">
-            <div class="col s6 m6">
-            <span>Date</span>
+               <h5>  <span>{{expense.exp_name}}</span></h5>
             </div>
             <div class="col s6 m6">
-            {{expense.date}}
+               <i class="material-icons right"></i>
+               <a href="{{url_for('edit_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn" style="text-align:center;">Edit</a> 
+               <i class="material-icons right"></i> 
+               <a href="{{url_for('delete_expense', expense_id=expense._id)}}" class="waves-effect waves-light btn green" style="text-align:center;">Del</a> 
+               <i class="material-icons right"></i>  
             </div>
-            </div>
-
-            <div class="row">
+         </div>
+         <div class="row">
             <div class="col s6 m6">
-            <span>Amount</span>
+               <span>Date</span>
+            </div>
+            <div class="col s6 m6">
+               {{expense.date}}
+            </div>
+         </div>
+         <div class="row">
+            <div class="col s6 m6">
+               <span>Amount</span>
             </div>
             <div class="col s6 m6" type="number" id="calcsum">
-            {{expense.amount}}
+               {{expense.amount}}
             </div>
-            </div>
-
-            <div class="row">
+         </div>
+         <div class="row">
             <div class="col s6 m6">
-            <span>Person</span>
-            </div>
-            <div class="col s6 m6">
-            {{expense.person}}
-            </div>
-            </div>
-
-            <div class="row">
-            <div class="col s6 m6">
-            <span>Notes</span>
+               <span>Person</span>
             </div>
             <div class="col s6 m6">
-            {{expense.notes}}
+               {{expense.person}}
             </div>
+         </div>
+         <div class="row">
+            <div class="col s6 m6">
+               <span>Notes</span>
             </div>
-        </li>
-        {% endfor %}
-    </ul>
-<div class="row">
-<div class col s11 m11>
-</div>
-<div class col s1 m1>
-   <!-- <a id="top-button"></a>
-   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
-</div>
-</div>
+            <div class="col s6 m6">
+               {{expense.notes}}
+            </div>
+         </div>
+      </li>
+      {% endfor %}
+   </ul>
+   <div class="row">
+      <div class col s11 m11></div>
+      <div class col s1 m1></div>
+   </div>
 </div>
 <div class="row exp_sum">
-<div class="col s4 m4">
-</div>
-<div class="col s8 m8">
-<h5>Total Expenses = ${{'%0.2f' |format(expenses_sum[0]) }}</h5><!--from stack overflow & jinja docs-->
-</div>
+   <div class="col s4 m4"></div>
+   <div class="col s8 m8">
+      <h5>Total Expenses = ${{'%0.2f' |format(expenses_sum[0]) }}</h5>
+      <!--from stack overflow & jinja docs-->
+   </div>
 </div>
 {% endblock %}

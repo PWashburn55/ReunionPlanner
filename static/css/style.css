@@ -118,7 +118,7 @@
     padding-left: 2px;
 }
 
-/*scroll to top button*/
+/*scroll to top button from W3 schools*/
 #myBtn {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
@@ -170,7 +170,6 @@
 
 .social_icon li {
     display: inline-block;
-    /*text-align: center; !important;*/
     padding: 4px;
     text-align: center;
 }
