@@ -72,7 +72,7 @@ def update_person(person_id):
 def get_schedule():
     the_item = mongo.db.schedule.find()
     return render_template('schedule.html',
-                           schedule=mongo.db.schedule.find(), item=the_item)
+                           schedule=the_item, item=the_item)
 
 
 #@app.route('/add_item')
