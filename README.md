@@ -87,7 +87,7 @@ the amount by more than about one dollar). Future improvements would fix this is
 ###Deployment: 
 
 The project is deployed on Heroku and I used Github for version control. Heroku's site states that Mongodb will no longer
-be supported as of 10 November 2020 so I am not sure if that will be an issue.
+be supported as of 10 November 2020 so I am not sure if that will be an issue. The Heroku logs do not show any issues.
 
 Finally, a huge thank you to the tutors (I specifically got a lot of help from Tim, Kevin, and Igor and many others as 
 well) and my mentor Aaron for all their help and patience with this project and the modules in spite of my glacial pace.
