@@ -12,7 +12,7 @@
       </div>
    </div>
    <ul>
-      <!--code from stack overflow-->
+      <!--code from stack overflow with help from a preply tutor-->
       {% set expenses_sum = [0] %}
       {% for expense in expenses %}
       {% set _ = expenses_sum.append(expenses_sum.pop() + expense.amount|float) %}  
