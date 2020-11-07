@@ -79,11 +79,15 @@ probably not use Materialize.
 I tested viewing all the pages as well as adding people, editing people, adding new schedule items, editing schedule 
 items, adding expenses, editing expenses, and deleting expenses, and making sure the total for the expenses was correct. 
 I also tested the site on a mobile phone and laptop and reviewed it with Lighthouse. The biggest issues I ran into where
-with Python and not being able to view pages but the tutors helped me solve those issues and I was able to fix some.
+with Python and not being able to view pages but the tutors helped me solve those issues and I was able to fix some.  
+There is also an issue with the amount field on the Edit Expenses page so I left that field blank (with the other fields 
+I was able to carry the value over to the edit pages but if I did that with the amount field it would not let me changed
+the amount by more than about one dollar). Future improvements would fix this issue.
 
 ###Deployment: 
 
-The project is deployed on Heroku and I used Github for version control.
+The project is deployed on Heroku and I used Github for version control. Heroku's site states that Mongodb will no longer
+be supported as of 10 November 2020 so I am not sure if that will be an issue.
 
 Finally, a huge thank you to the tutors (I specifically got a lot of help from Tim, Kevin, and Igor and many others as 
 well) and my mentor Aaron for all their help and patience with this project and the modules in spite of my glacial pace.
