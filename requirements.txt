@@ -4,7 +4,7 @@ dnspython==1.16.0
 Flask-Login==0.5.0
 Flask-PyMongo==2.3.0
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 pep8==1.7.1
 pycodestyle==2.6.0
 pycparser==2.20
